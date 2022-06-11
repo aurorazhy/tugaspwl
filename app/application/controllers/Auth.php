@@ -35,7 +35,17 @@ class Auth extends CI_Controller
 
          $this->db->insert('user', $data);
          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil dibuat </div>');
-         redirect('login/');
+         redirect('auth/login/');
       }
+   }
+
+   public function kelogin()
+   {
+      $this->load->view('auth/login');
+   }
+
+   public function keregister()
+   {
+      $this->load->view('auth/register');
    }
 }
