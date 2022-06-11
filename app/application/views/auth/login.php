@@ -10,6 +10,7 @@
 
 <body>
    <form action="" method="post">
+      <h1>Login</h1>
       <input type="text" name="email" placeholder="Name"><br>
       <input type="text" name="password" placeholder="Name"><br>
       <button>Login</button><br>
