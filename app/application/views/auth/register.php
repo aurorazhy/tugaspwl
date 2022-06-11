@@ -13,12 +13,12 @@
       <h1>Create Account</h1>
       <input type="text" name="name" placeholder="Name"><br>
       <input type="text" name="email" placeholder="Email"><br>
-      <input type="password" name="pass1" placeholder="Password">
-      <?= form_error('pass1', '<small class="text-danger pl-3"> ', '</small>'); ?><br>
-      <input type="password" name="pass2" placeholder="Confirm Password">
-      <?= form_error('pass2', '<small class="text-danger pl-3"> ', '</small>'); ?><br>
-      <button type="submit">Register</button><br>
-      <a href="<?= base_url('auth/tologin'); ?>">Login here</a>
+      <input type="text" name="pass1" placeholder="Password"><br>
+      <?= form_error('name', '<small class="text-danger pl-3"> ', '</small>'); ?>
+      <input type="text" name="pass2" placeholder="Confirm Password"><br>
+      <?= form_error('name', '<small class="text-danger pl-3"> ', '</small>'); ?>
+      <button>Register</button><br>
+      <a href="">Login here</a>
 </body>
 
 </html>
