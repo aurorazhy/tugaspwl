@@ -64,23 +64,21 @@ class Auth extends CI_Controller
          $this->load->view('auth/register');
       } else {
          $data = [
-            'name' => htmlspecialchars($this->input->post('name', true)),
-            'email' => htmlspecialchars($this->input->post('email', true)),
+            'namauser' => htmlspecialchars($this->input->post('name', true)),
+            'emailuser' => htmlspecialchars($this->input->post('email', true)),
             'image' => 'default.jgp',
-            'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-            'role_id' => 2,
-            'is_active' => 1,
-            'date_created' => time()
+            'passuser' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
          ];
 
          $this->db->insert('user', $data);
          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil dibuat </div>');
-         redirect('auth/register');
+         redirect('auth/login');
       }
+
    }
 
-   public function tologin()
+   public function kelogin()
    {
-      $this->load->view('auth/login');
+      $this->load->view('auth/register');
    }
 }

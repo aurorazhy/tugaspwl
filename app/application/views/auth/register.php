@@ -17,7 +17,7 @@
       <?= form_error('pass1', '<small class="text-danger pl-3"> ', '</small>'); ?><br>
       <input type="password" name="pass2" placeholder="Confirm Password">
       <?= form_error('pass2', '<small class="text-danger pl-3"> ', '</small>'); ?><br>
-      <button>Register</button><br>
+      <button type="submit">Register</button><br>
       <a href="<?= base_url('auth/tologin'); ?>">Login here</a>
 </body>
 
