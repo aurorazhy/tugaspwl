@@ -56,10 +56,10 @@ class Auth extends CI_Controller
 
    public function register()
    {
-      $this->form_validation->set_rules('name', 'Name', 'required|trim');
-      $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-      $this->form_validation->set_rules('pass1', 'Password', 'required|trim|matches[pass2]|min_length[8]', ['matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
-      $this->form_validation->set_rules('pass2', 'Password', 'required|trim|matches[pass2]|min_length[8]', ['matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
+      $this->form_validation->set_rules('name', 'Name', 'required|trim', ['required' => 'Password tidak boleh kosong']);
+      $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', ['required' => 'Password tidak boleh kosong',]);
+      $this->form_validation->set_rules('pass1', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
+      $this->form_validation->set_rules('pass2', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
       if ($this->form_validation->run() == false) {
          $this->load->view('auth/register');
       } else {
@@ -75,7 +75,12 @@ class Auth extends CI_Controller
 
          $this->db->insert('user', $data);
          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil dibuat </div>');
-         redirect('login/');
+         redirect('auth/register');
       }
+   }
+
+   public function tologin()
+   {
+      $this->load->view('auth/login');
    }
 }
