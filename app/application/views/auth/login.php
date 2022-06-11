@@ -14,7 +14,7 @@
       <input type="text" name="email" placeholder="Name"><br>
       <input type="text" name="password" placeholder="Name"><br>
       <button>Login</button><br>
-      <a href="<?= base_url('auth/register/'); ?>">Create Account</a>
+      <a href="<?= base_url('auth/keregister/'); ?>">Create Account</a>
    </form>
 </body>
 
