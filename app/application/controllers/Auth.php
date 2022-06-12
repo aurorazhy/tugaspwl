@@ -15,11 +15,11 @@ class Auth extends CI_Controller
       $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
       if ($this->form_validation->run() == false) {
-         $this->load->view('hf/header');
+         $data['title'] = 'Login';
+         $this->load->view('hf/header', $data);
          $this->load->view('auth/login');
          $this->load->view('hf/footer');
       } else {
-         //validasi berhasil
          $this->_login();
       }
    }
@@ -29,21 +29,22 @@ class Auth extends CI_Controller
       $email = $this->input->post('email');
       $password = $this->input->post('password');
 
-      $user = $this->db->get_where('user', ['emailuser' => $email])->row_array();
+      $user = $this->db->get_where('user', ['email' => $email])->row_array();
+      //jika usernya ada
       if ($user) {
-         //usernya ada
-         if (password_verify($password, $user['passuser'])) {
+         //cek password
+         if (password_verify($password, $user['password'])) {
             $data = [
-               'email' => $user['emailuser']
+               'email' => $user['email']
             ];
             $this->session->set_userdata($data);
             redirect('user');
          } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password salah </div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Wrong password! </div>');
             redirect('auth/');
          }
       } else {
-         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email tidak terdaftar </div>');
+         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email is not registered! </div>');
          redirect('auth/');
       }
    }
@@ -60,25 +61,15 @@ class Auth extends CI_Controller
          $this->load->view('hf/footer');
       } else {
          $data = [
-            'namauser' => htmlspecialchars($this->input->post('name', true)),
-            'emailuser' => htmlspecialchars($this->input->post('email', true)),
-            'image' => 'default.jgp',
-            'passuser' => password_hash($this->input->post('pass1'), PASSWORD_DEFAULT)
+            'name' => htmlspecialchars($this->input->post('name', true)),
+            'email' => htmlspecialchars($this->input->post('email', true)),
+            'image' => 'default.jpg',
+            'password' => password_hash($this->input->post('pass1'), PASSWORD_DEFAULT)
          ];
 
          $this->db->insert('user', $data);
          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil dibuat </div>');
          redirect('auth/');
       }
-   }
-
-   public function kelogin()
-   {
-      $this->load->view('auth/login');
-   }
-
-   public function keregister()
-   {
-      $this->load->view('auth/register');
    }
 }
