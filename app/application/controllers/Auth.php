@@ -15,7 +15,9 @@ class Auth extends CI_Controller
       $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
       if ($this->form_validation->run() == false) {
+         $this->load->view('hf/header');
          $this->load->view('auth/login');
+         $this->load->view('hf/footer');
       } else {
          $this->_login();
       }
@@ -26,29 +28,16 @@ class Auth extends CI_Controller
       $email = $this->input->post('email');
       $password = $this->input->post('password');
 
-      $user = $this->db->get_where('user', ['email' => $email])->row_array();
-      //jika usernya ada
-      if ($user) {
-         //jika usernya aktif
-         if ($user['is_active'] == 1) {
-            //cek password
-            if (password_verify($password, $user['password'])) {
+      $user = $this->db->get_where('user', ['emailuser' => $email])->row_array();
+      //cek password
+      if (password_verify($password, $user['passuser'])) {
                $data = [
-                  'email' => $user['email'],
-                  'role_id' => $user['role_id']
+            'emailuser' => $user['emailuser'],
                ];
                $this->session->set_userdata($data);
-               redirect('user');
+         redirect('user/');
             } else {
                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Wrong password! </div>');
-               redirect('auth/');
-            }
-         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> This email is not activated! </div>');
-            redirect('auth/');
-         }
-      } else {
-         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email is not registered! </div>');
          redirect('auth/');
       }
    }
@@ -60,7 +49,9 @@ class Auth extends CI_Controller
       $this->form_validation->set_rules('pass1', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
       $this->form_validation->set_rules('pass2', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
       if ($this->form_validation->run() == false) {
+         $this->load->view('hf/header');
          $this->load->view('auth/register');
+         $this->load->view('hf/footer');
       } else {
          $data = [
             'namauser' => htmlspecialchars($this->input->post('name', true)),
