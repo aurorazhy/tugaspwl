@@ -19,6 +19,7 @@ class Auth extends CI_Controller
          $this->load->view('auth/login');
          $this->load->view('hf/footer');
       } else {
+         //validasi berhasil
          $this->_login();
       }
    }
@@ -29,15 +30,20 @@ class Auth extends CI_Controller
       $password = $this->input->post('password');
 
       $user = $this->db->get_where('user', ['emailuser' => $email])->row_array();
-      //cek password
-      if (password_verify($password, $user['passuser'])) {
-               $data = [
-            'emailuser' => $user['emailuser'],
-               ];
-               $this->session->set_userdata($data);
-         redirect('user/');
-            } else {
-               $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Wrong password! </div>');
+      if ($user) {
+         //usernya ada
+         if (password_verify($password, $user['passuser'])) {
+            $data = [
+               'email' => $user['emailuser']
+            ];
+            $this->session->set_userdata($data);
+            redirect('user');
+         } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password salah </div>');
+            redirect('auth/');
+         }
+      } else {
+         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email tidak terdaftar </div>');
          redirect('auth/');
       }
    }
@@ -57,7 +63,7 @@ class Auth extends CI_Controller
             'namauser' => htmlspecialchars($this->input->post('name', true)),
             'emailuser' => htmlspecialchars($this->input->post('email', true)),
             'image' => 'default.jgp',
-            'passuser' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
+            'passuser' => password_hash($this->input->post('pass1'), PASSWORD_DEFAULT)
          ];
 
          $this->db->insert('user', $data);
