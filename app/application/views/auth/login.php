@@ -4,6 +4,6 @@
    <?= form_error('email', '<p>', '</p><br>'); ?>
    <input type="password" name="password" placeholder="Name" id="password"><br>
    <?= form_error('password', '<p>', '</p><br>'); ?>
-   <button type="submit">Login</button><br>
+   <button class="btn btn-a" type="submit">Login</button><br>
    <a href="<?= base_url('auth/register/'); ?>">Create Account</a>
 </form>
