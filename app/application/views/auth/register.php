@@ -33,7 +33,7 @@
 										<label for="pass1">Password</label>
 										<div class="d-flex flex-row">
 											<input type="password" name="pass1" class="form-control mr-4" id="pass1">
-											<input type="password" name="pass2" class="form-control" id="pass2">
+											<input type="password" name="pass2" class="form-control" id="pass2" placeholder="ulangi password">
 										</div>
 										<div class="form-group">
 											<small class="text-danger"><?= form_error('pass1', '<p> ', '</p>'); ?></small>
