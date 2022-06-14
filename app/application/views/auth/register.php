@@ -1,43 +1,54 @@
-<div class="container-fluid py-4 bg-appbg"></div>
-<div class="container-fluid py-5 bg-appbg"></div>
-<div class="container-fluid py-5 bg-appbg">
-	<div class="row">
-		<div class="col-6 offset-3 bg-light rounded-lg">
-			<div class="col-md-6 offset-3 my-5">
-				<div class="panel panel-default">
-					<div class="panel-head">
-						<center>
-							<h1>Buat Akun</h1>
-						</center>
-					</div>
-					<div class="panel-body">
-						<form class="my-5" method="post" action="<?= base_url('auth/register/'); ?>">
-							<div class="form-group">
-								<label for="nama">Nama</label>
-								<input type="text" name="name" class="form-control" id="nama">
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
-							</div>
-							<div class="form-group">
-								<label for="pass1">Password</label>
-								<div class="d-flex flex-row">
-									<input type="password" name="pass1" class="form-control mr-4" id="pass1">
-									<input type="password" name="pass2" class="form-control" id="pass2">
+<div class="container bg-appbg py-5">
+	<div class="container bg-appbg py-4"></div>
+	<!-- Outer Row -->
+	<div class="row justify-content-center">
+		<div class="col-lg-6">
+			<div class="card o-hidden border-0 shadow-lg my-5">
+				<div class="card-body p-0">
+					<!-- Nested Row within Card Body -->
+					<div class="row">
+						<div class="col-lg">
+							<div class="p-5">
+								<div class="text-center">
+									<h1 class="h4 text-gray-900 mb-4">Halaman Masuk</h1>
 								</div>
-								<?= form_error('pass1', '<small class="text-danger pl-3"> ', '</small>'); ?>
+								<form method="post" action="<?= base_url('auth/register/'); ?>">
+									<div class="form-group px-4 mx-4">
+										<label for="nama">Nama</label>
+										<input type="text" name="name" class="form-control" id="nama">
+									</div>
+									<div class="form-group px-4 mx-4">
+										<label for="email">Email</label>
+										<input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+									</div>
+									<div class="form-group px-4 mx-4">
+										<label for="pass1">Password</label>
+										<div class="d-flex flex-row">
+											<input type="password" name="pass1" class="form-control mr-4" id="pass1">
+											<input type="password" name="pass2" class="form-control" id="pass2">
+										</div>
+										<?= form_error('pass1', '<small class="text-danger pl-3"> ', '</small>'); ?>
+									</div>
+
+									<div class="text-center">
+										<div class="row py-3">
+											<div class="col-12">
+												<button type="submit" class="btn btn-appregis text-light px-5 py-2">Daftar</button>
+											</div>
+										</div>
+										<div class="row align-items-center">
+											<div class="col-6 text-end">Sudah punya akun?</div>
+											<div class="col-6 text-start">
+												<a class="btn btn-white" href="<?= base_url(''); ?>"> Masuk disini</a>
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
-							<center>
-								<button type="submit" class="btn btn-appregis text-light">Submit</button><br>
-								Sudah punya akun?<a class="btn btn-white" href="<?= base_url(''); ?>"> Masuk disini</a>
-							</center>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container-fluid py-5 bg-appbg"></div>
-<div class="container-fluid py-5 bg-appbg"></div>

@@ -56,7 +56,8 @@ class Auth extends CI_Controller
       $this->form_validation->set_rules('pass1', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
       $this->form_validation->set_rules('pass2', 'Password', 'required|trim|min_length[8]|matches[pass2]', ['required' => 'Password tidak boleh kosong', 'matches' => 'Password tidak sesuai', 'min_length' => 'Password kurang dari 8 karakter']);
       if ($this->form_validation->run() == false) {
-         $this->load->view('hf/header');
+         $data['title'] = 'Registrasi';
+         $this->load->view('hf/header', $data);
          $this->load->view('auth/register');
          $this->load->view('hf/footer');
       } else {
