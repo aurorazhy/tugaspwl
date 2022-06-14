@@ -1,7 +1,7 @@
 <div class="container-fluid py-5 bg-appbg"></div>
 <div class="container-fluid py-5 bg-appbg">
 	<div class="row">
-		<div class="col-6 offset-3 bg-light">
+		<div class="col-6 offset-3 bg-light rounded-lg">
 			<div class="col-md-6 offset-3 my-5">
 				<div class="panel panel-default">
 					<div class="panel-head">
@@ -33,7 +33,6 @@
 							</center>
 						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
