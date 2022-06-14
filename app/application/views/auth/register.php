@@ -1,3 +1,4 @@
+<div class="container-fluid py-4 bg-appbg"></div>
 <div class="container-fluid py-5 bg-appbg"></div>
 <div class="container-fluid py-5 bg-appbg">
 	<div class="row">
@@ -38,4 +39,5 @@
 		</div>
 	</div>
 </div>
+<div class="container-fluid py-5 bg-appbg"></div>
 <div class="container-fluid py-5 bg-appbg"></div>
