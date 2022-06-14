@@ -33,9 +33,9 @@
                                  </div>
                               </div>
                               <div class="row align-items-center">
-                                 <div class="col-6 text-end">Belum punya akun?</div>
-                                 <div class="col-6 text-start">
-                                    <a class="btn btn-white" href="<?= base_url('auth/register/'); ?>"> Daftar disini</a>
+                                 <div class="col-6 text-end p-0 m-0 mx-3">Belum punya akun?</div>
+                                 <div class="col-4 text-start p-0 m-0">
+                                    <a class="btn btn-white p-0 m-1 mx-0" href="<?= base_url('auth/register/'); ?>">Daftar disini</a>
                                  </div>
                               </div>
                            </div>
