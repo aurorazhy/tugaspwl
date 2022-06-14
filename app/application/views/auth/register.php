@@ -10,7 +10,7 @@
 						<div class="col-lg">
 							<div class="p-5">
 								<div class="text-center">
-									<h1 class="h4 text-gray-900 mb-4">Halaman Masuk</h1>
+									<h1 class="h4 text-gray-900 mb-4">Halaman Registrasi</h1>
 								</div>
 								<form method="post" action="<?= base_url('auth/register/'); ?>">
 									<div class="form-group px-4 mx-4">
