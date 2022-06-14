@@ -12,16 +12,19 @@
                         <div class="text-center">
                            <h1 class="h4 text-gray-900 mb-4">Halaman Masuk</h1>
                         </div>
+                        <div class="form-group px-4 mx-4">
+                           <?= $this->session->flashdata('message'); ?>
+                        </div>
                         <form action="<?= base_url('auth'); ?>" method="post">
                            <div class="form-group px-4 mx-4">
                               <label for="email">Email</label>
                               <input type="email" name="email" class="form-control bg-white" id="email" value="<?= set_value('email'); ?>" aria-describedby=" emailHelp">
-                              <?= form_error('email', '<p>', '</p><br>'); ?>
+                              <small class="text-danger"><?= form_error('email', '<p>', '</p>'); ?></small>
                            </div>
                            <div class="form-group px-4 mx-4">
                               <label for="pass1">Password</label>
                               <input type="password" name="password" class="form-control mr-4" id="pass1">
-                              <?= form_error('password', '<p>', '</p><br>'); ?>
+                              <small class="text-danger"><?= form_error('password', '<p>', '</p>'); ?></small>
                            </div>
                            <div class="text-center">
                               <div class="row py-3">

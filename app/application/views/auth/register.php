@@ -16,18 +16,28 @@
 									<div class="form-group px-4 mx-4">
 										<label for="nama">Nama</label>
 										<input type="text" name="name" class="form-control" id="nama">
+										<div class="form-group">
+											<small class="text-danger"><?= form_error('name', '<p> ', '</p>'); ?></small>
+										</div>
 									</div>
+
 									<div class="form-group px-4 mx-4">
 										<label for="email">Email</label>
 										<input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+										<div class="form-group">
+											<small class="text-danger"><?= form_error('email', '<p> ', '</p>'); ?></small>
+										</div>
 									</div>
+
 									<div class="form-group px-4 mx-4">
 										<label for="pass1">Password</label>
 										<div class="d-flex flex-row">
 											<input type="password" name="pass1" class="form-control mr-4" id="pass1">
 											<input type="password" name="pass2" class="form-control" id="pass2">
 										</div>
-										<?= form_error('pass1', '<small class="text-danger pl-3"> ', '</small>'); ?>
+										<div class="form-group">
+											<small class="text-danger"><?= form_error('pass1', '<p> ', '</p>'); ?></small>
+										</div>
 									</div>
 
 									<div class="text-center">
