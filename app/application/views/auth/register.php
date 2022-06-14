@@ -37,6 +37,7 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< Updated upstream
 </div>
 
 
@@ -51,3 +52,6 @@
 	<?= form_error('pass2', '<small class="text-danger pl-3"> ', '</small>'); ?><br>
 	<button type="submit">Register</button><br>
 	<a href=">Login here</a>
+=======
+</div>
+>>>>>>> Stashed changes
