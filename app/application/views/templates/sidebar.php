@@ -34,7 +34,7 @@
          <span>Belanja</span></a>
    </li>
    <li class="nav-item">
-      <a class="nav-link" href="charts.html">
+      <a class="nav-link" href="<?= base_url('user/stokbarang') ?>">
          <i class="fas fa-fw fa-chart-area"></i>
          <span>Barang</span></a>
    </li>

@@ -14,4 +14,16 @@ class User extends CI_Controller
       $this->load->view('dashboard/index', $data);
       $this->load->view('templates/footer');
    }
+
+   public function stokbarang()
+   {
+      $data['title'] = 'Stok Barang';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('dashboard/stokbarang', $data);
+      $this->load->view('templates/footer');
+   }
 }
