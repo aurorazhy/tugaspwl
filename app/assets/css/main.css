@@ -28,11 +28,11 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-appregis: #288b6f;
-  --bs-appbg: #cdd2d0;
   --bs-appside: #67a894;
+  --bs-appbg: #cdd2d0;
   --bs-appregis-rgb: 40, 139, 111;
-  --bs-appbg-rgb: 205, 210, 208;
   --bs-appside-rgb: 103, 168, 148;
+  --bs-appbg-rgb: 205, 210, 208;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -3240,47 +3240,6 @@ fieldset:disabled .btn {
   border-color: #288b6f;
 }
 
-.btn-appbg {
-  color: #000;
-  background-color: #cdd2d0;
-  border-color: #cdd2d0;
-}
-
-.btn-appbg:hover {
-  color: #000;
-  background-color: #d5d9d7;
-  border-color: #d2d7d5;
-}
-
-.btn-check:focus + .btn-appbg, .btn-appbg:focus {
-  color: #000;
-  background-color: #d5d9d7;
-  border-color: #d2d7d5;
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
-}
-
-.btn-check:checked + .btn-appbg,
-.btn-check:active + .btn-appbg, .btn-appbg:active, .btn-appbg.active,
-.show > .btn-appbg.dropdown-toggle {
-  color: #000;
-  background-color: #d7dbd9;
-  border-color: #d2d7d5;
-}
-
-.btn-check:checked + .btn-appbg:focus,
-.btn-check:active + .btn-appbg:focus, .btn-appbg:active:focus, .btn-appbg.active:focus,
-.show > .btn-appbg.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
-}
-
-.btn-appbg:disabled, .btn-appbg.disabled {
-  color: #000;
-  background-color: #cdd2d0;
-  border-color: #cdd2d0;
-}
-
 .btn-appside {
   color: #000;
   background-color: #67a894;
@@ -3322,6 +3281,47 @@ fieldset:disabled .btn {
   border-color: #67a894;
 }
 
+.btn-appbg {
+  color: #000;
+  background-color: #cdd2d0;
+  border-color: #cdd2d0;
+}
+
+.btn-appbg:hover {
+  color: #000;
+  background-color: #d5d9d7;
+  border-color: #d2d7d5;
+}
+
+.btn-check:focus + .btn-appbg, .btn-appbg:focus {
+  color: #000;
+  background-color: #d5d9d7;
+  border-color: #d2d7d5;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
+}
+
+.btn-check:checked + .btn-appbg,
+.btn-check:active + .btn-appbg, .btn-appbg:active, .btn-appbg.active,
+.show > .btn-appbg.dropdown-toggle {
+  color: #000;
+  background-color: #d7dbd9;
+  border-color: #d2d7d5;
+}
+
+.btn-check:checked + .btn-appbg:focus,
+.btn-check:active + .btn-appbg:focus, .btn-appbg:active:focus, .btn-appbg.active:focus,
+.show > .btn-appbg.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(174, 179, 177, 0.5);
+}
+
+.btn-appbg:disabled, .btn-appbg.disabled {
+  color: #000;
+  background-color: #cdd2d0;
+  border-color: #cdd2d0;
+}
+
 .btn-outline-appregis {
   color: #288b6f;
   border-color: #288b6f;
@@ -3356,40 +3356,6 @@ fieldset:disabled .btn {
   background-color: transparent;
 }
 
-.btn-outline-appbg {
-  color: #cdd2d0;
-  border-color: #cdd2d0;
-}
-
-.btn-outline-appbg:hover {
-  color: #000;
-  background-color: #cdd2d0;
-  border-color: #cdd2d0;
-}
-
-.btn-check:focus + .btn-outline-appbg, .btn-outline-appbg:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
-}
-
-.btn-check:checked + .btn-outline-appbg,
-.btn-check:active + .btn-outline-appbg, .btn-outline-appbg:active, .btn-outline-appbg.active, .btn-outline-appbg.dropdown-toggle.show {
-  color: #000;
-  background-color: #cdd2d0;
-  border-color: #cdd2d0;
-}
-
-.btn-check:checked + .btn-outline-appbg:focus,
-.btn-check:active + .btn-outline-appbg:focus, .btn-outline-appbg:active:focus, .btn-outline-appbg.active:focus, .btn-outline-appbg.dropdown-toggle.show:focus {
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
-          box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
-}
-
-.btn-outline-appbg:disabled, .btn-outline-appbg.disabled {
-  color: #cdd2d0;
-  background-color: transparent;
-}
-
 .btn-outline-appside {
   color: #67a894;
   border-color: #67a894;
@@ -3421,6 +3387,40 @@ fieldset:disabled .btn {
 
 .btn-outline-appside:disabled, .btn-outline-appside.disabled {
   color: #67a894;
+  background-color: transparent;
+}
+
+.btn-outline-appbg {
+  color: #cdd2d0;
+  border-color: #cdd2d0;
+}
+
+.btn-outline-appbg:hover {
+  color: #000;
+  background-color: #cdd2d0;
+  border-color: #cdd2d0;
+}
+
+.btn-check:focus + .btn-outline-appbg, .btn-outline-appbg:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
+}
+
+.btn-check:checked + .btn-outline-appbg,
+.btn-check:active + .btn-outline-appbg, .btn-outline-appbg:active, .btn-outline-appbg.active, .btn-outline-appbg.dropdown-toggle.show {
+  color: #000;
+  background-color: #cdd2d0;
+  border-color: #cdd2d0;
+}
+
+.btn-check:checked + .btn-outline-appbg:focus,
+.btn-check:active + .btn-outline-appbg:focus, .btn-outline-appbg:active:focus, .btn-outline-appbg.active:focus, .btn-outline-appbg.dropdown-toggle.show:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(205, 210, 208, 0.5);
+}
+
+.btn-outline-appbg:disabled, .btn-outline-appbg.disabled {
+  color: #cdd2d0;
   background-color: transparent;
 }
 
@@ -5230,16 +5230,6 @@ fieldset:disabled .btn {
   color: #134236;
 }
 
-.alert-appbg {
-  color: #525453;
-  background-color: #f5f6f6;
-  border-color: #f0f2f1;
-}
-
-.alert-appbg .alert-link {
-  color: #424342;
-}
-
 .alert-appside {
   color: #3e6559;
   background-color: #e1eeea;
@@ -5248,6 +5238,16 @@ fieldset:disabled .btn {
 
 .alert-appside .alert-link {
   color: #325147;
+}
+
+.alert-appbg {
+  color: #525453;
+  background-color: #f5f6f6;
+  border-color: #f0f2f1;
+}
+
+.alert-appbg .alert-link {
+  color: #424342;
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -5599,22 +5599,6 @@ fieldset:disabled .btn {
   border-color: #185343;
 }
 
-.list-group-item-appbg {
-  color: #525453;
-  background-color: #f5f6f6;
-}
-
-.list-group-item-appbg.list-group-item-action:hover, .list-group-item-appbg.list-group-item-action:focus {
-  color: #525453;
-  background-color: #dddddd;
-}
-
-.list-group-item-appbg.list-group-item-action.active {
-  color: #fff;
-  background-color: #525453;
-  border-color: #525453;
-}
-
 .list-group-item-appside {
   color: #3e6559;
   background-color: #e1eeea;
@@ -5629,6 +5613,22 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #3e6559;
   border-color: #3e6559;
+}
+
+.list-group-item-appbg {
+  color: #525453;
+  background-color: #f5f6f6;
+}
+
+.list-group-item-appbg.list-group-item-action:hover, .list-group-item-appbg.list-group-item-action:focus {
+  color: #525453;
+  background-color: #dddddd;
+}
+
+.list-group-item-appbg.list-group-item-action.active {
+  color: #fff;
+  background-color: #525453;
+  border-color: #525453;
 }
 
 .btn-close {
@@ -6850,20 +6850,20 @@ fieldset:disabled .btn {
   color: #53a28c;
 }
 
-.link-appbg {
-  color: #cdd2d0;
-}
-
-.link-appbg:hover, .link-appbg:focus {
-  color: #d7dbd9;
-}
-
 .link-appside {
   color: #67a894;
 }
 
 .link-appside:hover, .link-appside:focus {
   color: #85b9a9;
+}
+
+.link-appbg {
+  color: #cdd2d0;
+}
+
+.link-appbg:hover, .link-appbg:focus {
+  color: #d7dbd9;
 }
 
 .ratio {
@@ -7304,12 +7304,12 @@ fieldset:disabled .btn {
   border-color: #288b6f !important;
 }
 
-.border-appbg {
-  border-color: #cdd2d0 !important;
-}
-
 .border-appside {
   border-color: #67a894 !important;
+}
+
+.border-appbg {
+  border-color: #cdd2d0 !important;
 }
 
 .border-white {
@@ -8189,14 +8189,14 @@ fieldset:disabled .btn {
   color: rgba(var(--bs-appregis-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-appbg {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-appbg-rgb), var(--bs-text-opacity)) !important;
-}
-
 .text-appside {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-appside-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-appbg {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-appbg-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-black {
@@ -8255,14 +8255,14 @@ fieldset:disabled .btn {
   background-color: rgba(var(--bs-appregis-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-appbg {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-appbg-rgb), var(--bs-bg-opacity)) !important;
-}
-
 .bg-appside {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-appside-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-appbg {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-appbg-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
