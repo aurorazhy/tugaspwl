@@ -26,8 +26,8 @@
                         <div class="row">
                            <div class="col-6">
                               <div class="card-body text-white bg-appregis">
-                                 <div class="huge pr-2 text-right">0</div>
-                                 <p class="card-title text-right">Jumlah Barang</p>
+                                 <div class="huge text-right">0</div>
+                                 <p class="card-title text-right text-appgrey">Jumlah Barang</p>
                               </div>
                               <div class="card-body bg-appgrey rounded-bottom">
                                  <a href="<?= base_url() . 'dashboard/stokbarang'; ?>" style="text-decoration: none;">
@@ -41,8 +41,8 @@
 
                            <div class="col-6">
                               <div class="card-body text-white bg-appregis">
-                                 <div class="huge pr-2 text-right">0</div>
-                                 <p class="card-title text-right">Jumlah Transaksi</p>
+                                 <div class="huge text-right">0</div>
+                                 <p class="card-title text-right text-appgrey"> Jumlah Transaksi </p>
                               </div>
 
                               <div class="card-body bg-appgrey rounded-bottom">
@@ -60,9 +60,9 @@
                            <div class="col-12">
                               <div class="card rounded-bottom my-4 d-flex flex-row bg-appcard">
                                  <img class="card-img-top" src="<?= base_url() . 'assets/img/profile/default.jpg'; ?>" style="height: 15rem; width: 15rem;" alt="Card image cap">
-                                 <div class="card-body">
+                                 <div class="card-body m-auto">
                                     <h5 class="card-title"><?= $user['name']; ?></h5>
-                                    <p class="card-text"><?= $user['email']; ?></p>
+                                    <p class="card-text mb-1"><?= $user['email']; ?></p>
                                     <p class="card-text">jadi member</p>
                                  </div>
                               </div>
@@ -74,7 +74,7 @@
                      <div class="col-5 ml-5">
                         <div class="card rounded-bottom">
                            <div class="card-header bg-appregis text-center">
-                              Catatan
+                              <h3 class="text-appgrey">Catatan</h3>
                            </div>
                            <div class="card-body">
                               <textarea name="" id="" cols="10" rows="10"></textarea>
