@@ -30,7 +30,7 @@
                                  <p class="card-title text-right text-appgrey">Jumlah Barang</p>
                               </div>
                               <div class="card-body bg-appgrey rounded-bottom">
-                                 <a href="<?= base_url() . 'dashboard/stokbarang'; ?>" style="text-decoration: none;">
+                                 <a href="<?= base_url('user/stokbarang') ?>" style="text-decoration: none;">
                                     <div class="d-flex justify-content-between">
                                        <span class="text-appregis"> Lihat Detail </span>
                                        <span class="text-dark"><i class="fas fa-arrow-right"></i></span>
@@ -72,12 +72,12 @@
                      <!--akhir kolom 1-->
 
                      <div class="col-5 ml-5">
-                        <div class="card rounded-bottom">
+                        <div class="card rounded-bottom bg-appgrey">
                            <div class="card-header bg-appregis text-center">
-                              <h3 class="text-appgrey">Catatan</h3>
+                              <h5 class="text-appgrey">Catatan</h5>
                            </div>
-                           <div class="card-body">
-                              <textarea name="" id="" cols="10" rows="10"></textarea>
+                           <div class="form-group p-4">
+                              <textarea class="form-control" rows="12"></textarea>
                            </div>
                         </div>
                      </div>
