@@ -25,7 +25,7 @@ class User extends CI_Controller
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
       if ($id == '') {
-      $this->load->view('dashboard/sub_barang/form_add');
+         $this->load->view('dashboard/sub_barang/form_add');
       } else {
          $where = array(
             'id_barang' => $id
@@ -89,5 +89,14 @@ class User extends CI_Controller
       } else {
          redirect(base_url() . 'user/stokbarang');
       }
+   }
+
+   public function barang_del_act($id)
+   {
+      $where = array(
+         'id_barang' => $id
+      );
+      $this->M_barang->delete_data($where,  'barang');
+      redirect(base_url() . 'user/stokbarang');
    }
 }

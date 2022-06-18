@@ -23,7 +23,7 @@
                <td><?= $b->harga_jual ?></td>
                <td>
                   <a class="btn btn-warning btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
-                  <a class="btn btn-danger btn-sm" href=""><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                  <a class="btn btn-danger btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
                </td>
             </tr>
          <?php } ?>
