@@ -1,13 +1,13 @@
-<div class="col-7 offset-1">
-   <table>
+<div class="col-7 ml-5 bg-appcard rounded">
+   <table class="table table-hover text-center">
       <thead>
          <tr>
-            <th> No </th>
-            <th> Nama Barang </th>
-            <th> Harga Beli </th>
-            <th> Qty </th>
-            <th> Harga Jual </th>
-            <th></th>
+            <td> No </td>
+            <td> Nama Barang </td>
+            <td> Harga Beli </td>
+            <td> Qty </td>
+            <td> harga Jual </td>
+            <td></td>
          </tr>
       </thead>
       <tbody>
