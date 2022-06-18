@@ -86,10 +86,5 @@
             </div>
             <!--akhir container-->
 
-
-
-            </div>
-            </div>
-
             </div>
             <!-- End of Main Content -->
