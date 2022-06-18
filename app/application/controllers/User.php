@@ -99,4 +99,19 @@ class User extends CI_Controller
       $this->M_barang->delete_data($where,  'barang');
       redirect(base_url() . 'user/stokbarang');
    }
+
+   //belanja
+   public function belanja()
+   {
+      $data['title'] = 'Stok Barang';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['barang'] = $this->M_barang->get_data('barang')->result();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('dashboard/sub_barang/table', $data);
+      $this->load->view('templates/footer');
+   }
+
 }
