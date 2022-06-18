@@ -21,7 +21,7 @@
             <div class="form-group">
                <label> Nama Barang </label>
                <input type="text" name="nm" class="form-control">
-               <?= form_error('merk'); ?>
+               <?= form_error('nm'); ?>
             </div>
             <div class="form-group">
                <label> Harga Beli </label>
@@ -34,6 +34,7 @@
             <div class="form-group">
                <label> Qty </label>
                <input type="number" name="qty" class="form-control">
+               <?= form_error('qty'); ?>
             </div>
             <div class="form-group">
                <input type="submit" value="Simpan" class="btn btn-primary">

@@ -31,24 +31,26 @@ class User extends CI_Controller
 
    public function barang_add_act()
    {
-      $nama_barang = $this->input->post('nama_barang');
-      $harga_beli = $this->input->post('harga_beli');
-      $qty = $this->input->post('qty');
-      $harga_jual = $this->input->post('harga_jual');
-      $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required');
+
+      $this->form_validation->set_rules('nm', 'Nama Barang', 'required');
       $this->form_validation->set_rules('qty', 'Quantity', 'required');
 
       if ($this->form_validation->run() != false) {
+         $nama_barang = $this->input->post('nm');
+         $harga_beli = $this->input->post('hb');
+         $qty = $this->input->post('qty');
+         $harga_jual = $this->input->post('hj');
+
          $data = array(
             'nama_barang' => $nama_barang,
             'harga_beli' => $harga_beli,
             'qty' => $qty,
             'harga_jual' => $harga_jual
          );
-         $this->M_rental->insert_data($data, 'barang');
-         redirect(base_url() . 'admin/stokbarang');
+         $this->M_barang->insert_data($data, 'barang');
+         redirect(base_url() . 'user/stokbarang');
       } else {
-         redirect(base_url() . 'admin/stokbarang');
+         redirect(base_url() . 'user/stokbarang');
       }
    }
 }
