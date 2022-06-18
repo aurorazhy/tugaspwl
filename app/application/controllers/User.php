@@ -28,4 +28,27 @@ class User extends CI_Controller
       $this->load->view('dashboard/sub_barang/table', $data);
       $this->load->view('templates/footer');
    }
+
+   public function barang_add_act()
+   {
+      $nama_barang = $this->input->post('nama_barang');
+      $harga_beli = $this->input->post('harga_beli');
+      $qty = $this->input->post('qty');
+      $harga_jual = $this->input->post('harga_jual');
+      $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required');
+      $this->form_validation->set_rules('qty', 'Quantity', 'required');
+
+      if ($this->form_validation->run() != false) {
+         $data = array(
+            'nama_barang' => $nama_barang,
+            'harga_beli' => $harga_beli,
+            'qty' => $qty,
+            'harga_jual' => $harga_jual
+         );
+         $this->M_rental->insert_data($data, 'barang');
+         redirect(base_url() . 'admin/stokbarang');
+      } else {
+         redirect(base_url() . 'admin/stokbarang');
+      }
+   }
 }
