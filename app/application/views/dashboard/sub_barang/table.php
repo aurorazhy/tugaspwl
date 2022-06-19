@@ -20,12 +20,12 @@
                <tr>
                   <td>
                      <?= $no++; ?>
-                     <input type="hidden" name="id" value="<?= $b->id_barang  ?>">
+                     <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
                   </td>
-                  <td width="200px"><input type="text" name="nm" value="<?= $b->nama_barang ?>" class="form-control"></td>
-                  <td><input type="number" name="hb" value="<?= $b->harga_beli ?>" class="form-control"></td>
-                  <td><input type="number" name="qty" value="<?= $b->qty ?>" class="form-control"></td>
-                  <td><input type="number" name="hl" value="<?= $b->harga_jual ?>" class="form-control"></td>
+                  <td width="200px"><input type="text" name="nm[]" value="<?= $b->nama_barang ?>" class="form-control"></td>
+                  <td><input type="number" name="hb[]" value="<?= $b->harga_beli ?>" class="form-control"></td>
+                  <td><input type="number" name="qty[]" value="<?= $b->qty ?>" class="form-control"></td>
+                  <td><input type="number" name="hl[]" value="<?= $b->harga_jual ?>" class="form-control"></td>
                   <td width="160px">
                      <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
                      <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
