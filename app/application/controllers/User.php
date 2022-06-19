@@ -113,5 +113,4 @@ class User extends CI_Controller
       $this->load->view('dashboard/sub_barang/table', $data);
       $this->load->view('templates/footer');
    }
-
 }
