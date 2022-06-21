@@ -15,29 +15,31 @@ class User extends CI_Controller
       $this->load->view('templates/footer');
    }
 
-   // public function stokbarang($id = "")
-   // {
-   //    $data['title'] = 'Stok Barang';
-   //    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-   //    $data['barang'] = $this->M_barang->get_data('barang')->result();
+   //dari sini
 
-   //    $this->load->view('templates/header', $data);
-   //    $this->load->view('templates/sidebar', $data);
-   //    $this->load->view('templates/topbar', $data);
-   //    if ($id == '') {
-   //       $this->load->view('dashboard/sub_barang/form_add');
-   //    } else {
-   //       $where = array(
-   //          'id_barang' => $id
-   //       );
-   //       $data['barang'] = $this->M_barang->edit_data($where, 'barang')->result();
-   //       $this->load->view('dashboard/sub_barang/form_edit', $data);
-   //    }
-   //    $this->load->view('dashboard/sub_barang/table', $data);
-   //    $this->load->view('templates/footer');
-   // }
+   public function stokbarangtemp($id = "")
+   {
+      $data['title'] = 'Stok Barang';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['barang'] = $this->M_barang->get_data('barang')->result();
 
-   // yg asli yg atas, ini nyoba 
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      if ($id == '') {
+         $this->load->view('dashboard/sub_barang/form_add');
+      } else {
+         $where = array(
+            'id_barang' => $id
+         );
+         $data['barang'] = $this->M_barang->edit_data($where, 'barang')->result();
+         $this->load->view('dashboard/sub_barang/form_edit', $data);
+      }
+      $this->load->view('dashboard/sub_barang/table', $data);
+      $this->load->view('templates/footer');
+   }
+
+   // yg asli yg bawah, ini nyoba 
    public function barangtable()
    {
       $data['title'] = 'List Barang';
@@ -222,12 +224,25 @@ class User extends CI_Controller
    {
       $data['title'] = 'Stok Barang';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-      $data['barang'] = $this->M_barang->get_data('barang')->result();
+      $data['kategori'] = $this->M_barang->get_data('kategori')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
-      $this->load->view('dashboard/sub_barang/table', $data);
+      $this->load->view('dashboard/sub_belanja/kategori', $data);
+      $this->load->view('templates/footer');
+   }
+
+   public function kategorilist($id)
+   {
+      $data['title'] = 'Stok Barang';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategorii = id_kategori AND id_kategorii ='$id'")->result();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('dashboard/sub_belanja/detailkategori', $data);
       $this->load->view('templates/footer');
    }
 }
