@@ -24,19 +24,32 @@
 
    <!-- Heading -->
    <div class="sidebar-heading">
-      Profile
+      Barang
    </div>
-
-   <!-- Nav Item - Charts -->
    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('user/belanja') ?>">
+      <a class="nav-link" href="<?= base_url('user/barangtable') ?>">
          <i class="fas fa-fw fa-chart-area"></i>
-         <span>Belanja</span></a>
+         <span>Detail</span></a>
    </li>
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('user/stokbarang') ?>">
          <i class="fas fa-fw fa-chart-area"></i>
-         <span>Barang</span></a>
+         <span>Tambah Barang</span></a>
+   </li>
+
+   <!-- Divider -->
+   <hr class="sidebar-divider bg-white">
+
+   <!-- Heading -->
+   <div class="sidebar-heading">
+      Sistem
+   </div>
+
+   <!-- Nav Item - Charts -->
+   <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('user/stokbarang') ?>">
+         <i class="fas fa-fw fa-chart-area"></i>
+         <span>Belanja</span></a>
    </li>
    <li class="nav-item">
       <a class="nav-link" href="charts.html">

@@ -42,5 +42,14 @@ class M_barang extends CI_Model
       return $query;
    }
 
+   function jointemp()
+   {
+      $this->db->select('*');
 
+      $this->db->from('temp');
+      $this->db->join('kategori', 'kategori.id_kategorii = temp.id_kategori');
+
+      $query = $this->db->get();
+      return $query;
+   }
 }

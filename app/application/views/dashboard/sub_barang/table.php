@@ -16,7 +16,7 @@
          <tbody>
             <?php
             $no = 1;
-            foreach ($barang as $b) {
+            foreach ($temp as $b) {
             ?>
                <tr>
                   <td>

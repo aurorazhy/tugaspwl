@@ -57,6 +57,7 @@ class User extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['barang'] = $this->M_barang->joinbarang()->result();
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
+      $data['temp'] = $this->M_barang->jointemp()->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -97,7 +98,7 @@ class User extends CI_Controller
             'harga_jual' => $harga_jual,
             'id_kategori' => $kategori
          );
-         $this->M_barang->insert_data($data, 'barang');
+         $this->M_barang->insert_data($data, 'temp');
          redirect(base_url() . 'user/stokbarang');
       } else {
          redirect(base_url() . 'user/stokbarang');
@@ -191,7 +192,7 @@ class User extends CI_Controller
 
       if ($this->form_validation->run() != false) {
          $kate = $this->input->post('kat');
-         
+
          $where = array(
             'id_kategorii' => $id
          );
