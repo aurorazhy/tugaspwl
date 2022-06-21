@@ -9,6 +9,7 @@
                <td> Harga Beli </td>
                <td> Qty </td>
                <td> harga Jual </td>
+               <td> Nama Kategori </td>
                <td></td>
             </tr>
          </thead>
@@ -26,6 +27,7 @@
                   <td><input type="number" name="hb[]" value="<?= $b->harga_beli ?>" class="form-control"></td>
                   <td><input type="number" name="qty[]" value="<?= $b->qty ?>" class="form-control"></td>
                   <td><input type="number" name="hl[]" value="<?= $b->harga_jual ?>" class="form-control"></td>
+                  <td><input type="text" name="kat[]" value="<?= $b->nama_kategori ?>" class="form-control"></td>
                   <td width="160px">
                      <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
                      <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
@@ -36,7 +38,9 @@
       </table>
       <input type="submit" value="Simpan" name="simpan" class="btn btn-primary">
    </form>
+   <a href="<?= base_url() . 'user/kategori/' ?>">Tambah Kategori</a>
 </div>
+
 </div>
 
 

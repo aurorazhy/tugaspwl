@@ -28,4 +28,19 @@ class M_barang extends CI_Model
       $this->db->where($where);
       $this->db->delete($table);
    }
+
+
+   //baru
+   function joinbarang()
+   {
+      $this->db->select('*');
+
+      $this->db->from('barang');
+      $this->db->join('kategori', 'kategori.id_kategorii = barang.id_kategori');
+
+      $query = $this->db->get();
+      return $query;
+   }
+
+
 }

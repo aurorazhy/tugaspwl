@@ -37,6 +37,20 @@
                   <input type="number" name="qty" class="form-control" value="<?= $b->qty  ?>">
                   <?= form_error('qty'); ?>
                </div>
+
+               <div class="form-group">
+                  <label> Kategori </label>
+                  <select class="custom-select" name="kat">
+                     <option selected>-Pilih-</option>
+                     <?php
+                  foreach ($kategori as $k) {
+                  ?>
+                     <option <?php if($b->id_kategori == $k->id_kategorii){
+               echo "selected ='selected'";} ?> value="<?= $k->id_kategorii ?>"><?= $k->nama_kategori ?></option>
+                     <?php } ?>
+                  </select>
+               </div>
+
                <div class="form-group">
                   <input type="submit" value="Update" class="btn btn-primary">
                </div>
