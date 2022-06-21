@@ -37,7 +37,18 @@ class User extends CI_Controller
    //    $this->load->view('templates/footer');
    // }
 
-   // yg asli yg atas, ini nyoba aja
+   // yg asli yg atas, ini nyoba 
+   public function barangtable()
+   {
+      $data['title'] = 'List Barang';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['barang'] = $this->M_barang->joinbarang()->result();
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('dashboard/sub_barang/tablelist', $data);
+      $this->load->view('templates/footer');
+   }
    public function stokbarang($id = "")
    {
       $data['title'] = 'Stok Barang';
