@@ -5,8 +5,7 @@
             <td> No </td>
             <td> Nama Barang </td>
             <td> Harga </td>
-            <td> Qty </td>
-            <td> Total </td>
+            <td> Berapa </td>
             <td></td>
          </tr>
       </thead>
@@ -17,14 +16,11 @@
          ?>
             <tr>
                <td><?= $no++; ?></td>
-               <td><?= $b->nama_barang ?></td>
-               <td><?= $b->harga_beli ?></td>
-               <td><?= $b->qty ?></td>
-               <td><?= $b->harga_jual ?></td>
-               <td><?= $b->nama_kategori ?></td>
+               <td><input type="hidden" name="nm[]" value="<?= $b->nama_barang ?>"><?= $b->nama_barang ?></td>
+               <td><input type="hidden" name="hb[]" value="<?= $b->harga_beli ?>"><?= $b->harga_beli ?></td>
+               <td><input type="number" name="brp[]"></td>
                <td>
-                  <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
-                  <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                  <button type="submit" class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/belanjabarang/' ?>">Tambah</button>
                </td>
             </tr>
          <?php } ?>
