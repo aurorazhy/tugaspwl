@@ -1,4 +1,4 @@
-<div class="col-5 ml-5 bg-white rounded">
+<div class="col-7 ml-5 bg-white rounded">
    <form action="<?= base_url() . 'user/belanjabarangtemp' ?>" method="post">
       <table class="table table-hover text-center">
          <thead>
