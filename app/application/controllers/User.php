@@ -251,26 +251,27 @@ class User extends CI_Controller
       $this->load->view('templates/footer');
    }
 
-   public function belanjabarang($id)
+   public function belanjabarangtemp()
    {
-      $id = $this->input->post('id');
       $nm = $this->input->post('nm');
-      $hb = $this->input->post('hb');
+      $hj = $this->input->post('hj');
       $brp = $this->input->post('brp');
       $this->form_validation->set_rules('brp', 'Berapa', 'required');
+      
 
       if ($this->form_validation->run() != false) {
-         $total = $hb * $brp;
+         $total = $hj * $brp;
          $data = array(
-            'id_barang' => $id,
             'nama_barang' => $nm,
-            'harga_beli' => $hb,
+            'harga_jual' => $hj,
             'berapa' => $brp,
             'total' => $total
          );
 
          $this->M_barang->insert_data($data, 'temp');
-         redirect(base_url() . 'user/kategorilist');
+         redirect(base_url() . 'user/belanja');
+      } else {
+         redirect(base_url() . 'user/kategori');
       }
    }
 }
