@@ -1,34 +1,34 @@
 <div class="col-7 ml-5 bg-appcard rounded">
-   <table class="table table-hover text-center">
-      <thead>
-         <tr>
-            <td> No </td>
-            <td> Nama Barang </td>
-            <td> Harga </td>
-            <td> Qty </td>
-            <td> Total </td>
-            <td></td>
-         </tr>
-      </thead>
-      <tbody>
-         <?php
-         $no = 1;
-         foreach ($temp as $b) {
-         ?>
+   <form action="<?= base_url() . 'user/belanjabarang' ?>">
+      <table class="table table-hover text-center">
+         <thead>
+            <tr>
+               <td> No </td>
+               <td> Nama Barang </td>
+               <td> Harga </td>
+               <td> Jumlah </td>
+               <td> Total </td>
+               <td></td>
+            </tr>
+         </thead>
+         <tbody>
+            <?php
+            $no = 1;
+            ?>
             <tr>
                <td><?= $no++; ?></td>
-               <td><?= $b->nama_barang ?></td>
-               <td><?= $b->harga_jual ?></td>
-               <td><?= $brp ?></td>
-               <td><?= $total ?></td>
+               <td><input type="text" name="nm[]"></td>
+               <td><input type="number" name="hrg[]"></td>
+               <td><input type="number" name="brp[]"></td>
+               <td><input type="number" name="total[]"></td>
                <td>
-                  <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
-                  <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                  <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/stokbarang/' ?>"><span class="glyphicon glyphicon-plus"></span>Tambah List</a>
                </td>
             </tr>
-         <?php } ?>
-      </tbody>
-   </table>
+
+         </tbody>
+      </table>
+   </form>
 </div>
 </div>
 
