@@ -1,39 +1,45 @@
-<div class="col-7 ml-5 bg-appcard rounded">
+<div class="col-7 ml-5 p-0 bg-appcard rounded">
 
-      <div class="card-body text-white bg-appregis">
-         <p class="card-title text-right text-appgrey"> List Nama Barang </p>
-         <a href="<?= base_url() . 'user/stokbarang'; ?>" class="">Tambah Barang</a>
+   <div class="card-body text-white bg-appregis">
+      <div class="row justify-content-between">
+         <div class="col-6">
+            <h5 class="card-title text-appgrey"> List Nama Barang </h5>
+         </div>
+         <div class="col-6 text-right">
+            <a href="<?= base_url() . 'user/stokbarang'; ?>" class="btn btn-appcard">+</a>
+         </div>
       </div>
-      <table class="table table-hover text-center">
-         <thead>
+   </div>
+   <table class="table table-hover text-center">
+      <thead>
+         <tr>
+            <td> No </td>
+            <td> Nama Barang </td>
+            <td> Harga Beli </td>
+            <td> Qty </td>
+            <td> harga Jual </td>
+            <td> Nama Kategori </td>
+         </tr>
+      </thead>
+      <tbody>
+         <?php
+         $no = 1;
+         foreach ($barang as $b) {
+         ?>
             <tr>
-               <td> No </td>
-               <td> Nama Barang </td>
-               <td> Harga Beli </td>
-               <td> Qty </td>
-               <td> harga Jual </td>
-               <td> Nama Kategori </td>
+               <td>
+                  <?= $no++; ?>
+                  <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
+               </td>
+               <td width="200px"><?= $b->nama_barang ?></td>
+               <td><?= $b->harga_beli ?></td>
+               <td><?= $b->qty ?></td>
+               <td><?= $b->harga_jual ?></td>
+               <td> <?= $b->nama_kategori ?></td>
             </tr>
-         </thead>
-         <tbody>
-            <?php
-            $no = 1;
-            foreach ($barang as $b) {
-            ?>
-               <tr>
-                  <td>
-                     <?= $no++; ?>
-                     <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
-                  </td>
-                  <td width="200px"><?= $b->nama_barang ?></td>
-                  <td><?= $b->harga_beli ?></td>
-                  <td><?= $b->qty ?></td>
-                  <td><?= $b->harga_jual ?></td>
-                  <td> <?= $b->nama_kategori ?></td>
-               </tr>
-            <?php } ?>
-         </tbody>
-      </table>
+         <?php } ?>
+      </tbody>
+   </table>
    </form>
 </div>
 

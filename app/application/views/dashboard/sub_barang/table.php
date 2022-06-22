@@ -39,9 +39,9 @@
             <?php } ?>
          </tbody>
       </table>
-      <input type="submit" value="Simpan" name="simpan" class="btn btn-primary">
+      <input type="submit" value="Simpan" name="simpan" class="btn btn-appregis text-light float-right">
    </form>
-   <a href="<?= base_url() . 'user/kategori/' ?>">Tambah Kategori</a>
+   <a href="<?= base_url() . 'user/kategori/' ?>" class="btn btn-appregis text-light">Tambah Kategori</a>
 </div>
 
 </div>

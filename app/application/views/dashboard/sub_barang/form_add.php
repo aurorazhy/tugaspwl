@@ -52,7 +52,7 @@
 
             <!--sampe -->
             <div class="form-group">
-               <input type="submit" value="Simpan" class="btn btn-primary">
+               <input type="submit" value="Input" class="btn btn-appregis text-light float-right">
             </div>
          </form>
       </div>
