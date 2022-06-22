@@ -231,6 +231,7 @@ class User extends CI_Controller
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
       $this->load->view('dashboard/sub_belanja/kategori', $data);
+      $this->load->view('dashboard/sub_belanja/table', $data);
       $this->load->view('templates/footer');
    }
 
@@ -239,11 +240,36 @@ class User extends CI_Controller
       $data['title'] = 'Stok Barang';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategorii = id_kategori AND id_kategorii ='$id'")->result();
+      $data['temp'] = $this->M_barang->get_data('temp')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
       $this->load->view('dashboard/sub_belanja/detailkategori', $data);
+      $this->load->view('dashboard/sub_belanja/table', $data);
       $this->load->view('templates/footer');
+   }
+
+   public function belanjabarang($id)
+   {
+      $id = $this->input->post('id');
+      $nm = $this->input->post('nm');
+      $hb = $this->input->post('hb');
+      $brp = $this->input->post('brp');
+      $this->form_validation->set_rules('brp', 'Berapa', 'required');
+
+      if ($this->form_validation->run() != false) {
+         $total = $hb * $brp;
+         $data = array(
+            'id_barang' => $id,
+            'nama_barang' => $nm,
+            'harga_beli' => $hb,
+            'berapa' => $brp,
+            'total' => $total
+         );
+
+         $this->M_barang->insert_data($data, 'temp');
+         redirect(base_url() . 'user/kategorilist');
+      }
    }
 }
