@@ -1,4 +1,4 @@
-<div class="col-7 ml-5 bg-appcard rounded">
+<div class="col-9 ml-3 bg-appcard rounded">
 
    <form action="<?= base_url() . 'auto/autobarang' ?>" method="post" class="col-md-12">
       <table class="table table-hover text-center">

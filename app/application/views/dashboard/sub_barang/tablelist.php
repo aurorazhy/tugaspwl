@@ -1,4 +1,4 @@
-<div class="col-7 ml-5 p-0 bg-appcard rounded">
+<div class="col-10 ml-5 p-0 bg-appcard rounded">
 
    <div class="card-body text-white bg-appregis">
       <div class="row justify-content-between">

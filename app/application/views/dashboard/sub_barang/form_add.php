@@ -14,8 +14,8 @@
          </form>
       </div>
    </div>
-   <div class="row">
-      <div class="col-3 offset-1 py-3">
+   <div class="row ml-3">
+      <div class="col-2 py-3">
 
          <form action="<?= base_url() . 'user/barang_add_act' ?>" method="post">
             <div class="form-group">

@@ -14,8 +14,8 @@
          </form>
       </div>
    </div>
-   <div class="row">
-      <div class="col-3 offset-1 py-3">
+   <div class="row ml-5">
+      <div class="col-2 py-3">
          <?php foreach ($barang as $b) { ?>
             <form action="<?= base_url() . 'user/barang_edit_act' ?>" method="post">
                <div class="form-group">
@@ -43,10 +43,11 @@
                   <select class="custom-select" name="kat">
                      <option selected>-Pilih-</option>
                      <?php
-                  foreach ($kategori as $k) {
-                  ?>
-                     <option <?php if($b->id_kategori == $k->id_kategorii){
-               echo "selected ='selected'";} ?> value="<?= $k->id_kategorii ?>"><?= $k->nama_kategori ?></option>
+                     foreach ($kategori as $k) {
+                     ?>
+                        <option <?php if ($b->id_kategori == $k->id_kategorii) {
+                                    echo "selected ='selected'";
+                                 } ?> value="<?= $k->id_kategorii ?>"><?= $k->nama_kategori ?></option>
                      <?php } ?>
                   </select>
                </div>
