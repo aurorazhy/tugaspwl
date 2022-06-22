@@ -47,7 +47,7 @@
 
    <!-- Nav Item - Charts -->
    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('user/stokbarang') ?>">
+      <a class="nav-link" href="<?= base_url('user/belanja') ?>">
          <i class="fas fa-fw fa-chart-area"></i>
          <span>Belanja</span></a>
    </li>
