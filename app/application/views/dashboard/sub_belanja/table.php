@@ -1,4 +1,4 @@
-<div class="col-7 ml-5 bg-appcard rounded">
+<div class="col-5 ml-5 bg-appcard rounded">
    <form action="<?= base_url() . 'user/belanjabarang' ?>"></form>
    <table class="table table-hover text-center">
       <thead>
@@ -40,6 +40,9 @@
       </tbody>
    </table>
    </form>
+</div>
+</div>
+</div>
 </div>
 </div>
 
