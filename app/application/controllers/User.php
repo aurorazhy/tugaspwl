@@ -226,6 +226,7 @@ class User extends CI_Controller
       $data['title'] = 'Stok Barang';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
+      $data['temp'] = $this->M_barang->get_data('temp')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
