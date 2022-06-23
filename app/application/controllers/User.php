@@ -51,6 +51,7 @@ class User extends CI_Controller
       $this->load->view('dashboard/sub_barang/tablelist', $data);
       $this->load->view('templates/footer');
    }
+
    public function stokbarang($id = "")
    {
       $data['title'] = 'Stok Barang';
@@ -65,11 +66,7 @@ class User extends CI_Controller
       if ($id == '') {
          $this->load->view('dashboard/sub_barang/form_add');
       } else {
-         $where = array(
-            'id_barang' => $id
-         );
-         //$data['barang'] = $this->M_barang->edit_data($where, 'barang')->result();
-         $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategori = id_kategorii AND id_barang ='$id'")->result();
+         $data['barang'] = $this->db->query("SELECT * FROM temp, kategori WHERE id_kategori = id_kategorii AND id_barang ='$id'")->result();
          $this->load->view('dashboard/sub_barang/form_edit', $data);
       }
       $this->load->view('dashboard/sub_barang/table', $data);
@@ -130,7 +127,7 @@ class User extends CI_Controller
             'harga_jual' => $harga_jual,
             'id_kategori' => $kategori
          );
-         $this->M_barang->update_data($where, $data, 'barang');
+         $this->M_barang->update_data($where, $data, 'temp');
          redirect(base_url() . 'user/stokbarang');
       } else {
          redirect(base_url() . 'user/stokbarang');
