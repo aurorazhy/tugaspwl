@@ -176,9 +176,9 @@ class User extends CI_Controller
          );
 
          $this->M_barang->insert_data($data, 'kategori');
-         redirect(base_url() . 'user/stokbarang');
+         redirect(base_url() . 'user/kategori');
       } else {
-         redirect(base_url() . 'user/stokbarang');
+         redirect(base_url() . 'user/kategori');
       }
    }
 
