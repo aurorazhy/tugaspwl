@@ -8,9 +8,6 @@
                <td> Harga </td>
                <td> Jumlah </td>
                <td> Total </td>
-               <?php foreach ($temp as $t) { ?>
-                  <td> ID - 0<?= $t->id_transaksi ?> </td>
-               <?php } ?>
             </tr>
          </thead>
          <tbody>
@@ -18,7 +15,12 @@
             $no = 1;
             ?>
             <tr class="bg-appside">
-               <td></td>
+               <td>
+                  <input type="hidden" value="
+                     <?php foreach ($transaksi as $tr) { ?>
+                        <?= $tr->id_transaksi ?>
+                     <?php } ?>" name="id_transaksi">
+               </td>
                <td><input type="text" name="nm" class="form-control"></td>
                <td><input type="number" name="hj" class="form-control"></td>
                <td><input type="number" name="brp" class="form-control">

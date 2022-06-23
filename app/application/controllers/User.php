@@ -223,7 +223,8 @@ class User extends CI_Controller
       $data['title'] = 'Belanja';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
-      $data['temp'] = $this->db->query('SELECT * FROM temp,transaksi')->result();
+      $data['temp'] = $this->M_barang->get_data('temp')->result();
+      $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -238,8 +239,8 @@ class User extends CI_Controller
       $data['title'] = 'Stok Barang';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategorii = id_kategori AND id_kategorii ='$id'")->result();
-      $data['temp'] = $this->db->query('SELECT * FROM temp,transaksi')->result();
-      
+      $data['temp'] = $this->M_barang->get_data('temp')->result();
+      $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -254,8 +255,9 @@ class User extends CI_Controller
       $nm = $this->input->post('nm');
       $hj = $this->input->post('hj');
       $brp = $this->input->post('brp');
+      $id_transaksi = $this->input->post('id_transaksi');
       $this->form_validation->set_rules('brp', 'Berapa', 'required');
-      
+
 
       if ($this->form_validation->run() != false) {
          $total = $hj * $brp;
@@ -263,7 +265,8 @@ class User extends CI_Controller
             'nama_barang' => $nm,
             'harga_jual' => $hj,
             'berapa' => $brp,
-            'total' => $total
+            'total' => $total,
+            'id_transaksi' => $id_transaksi
          );
 
          $this->M_barang->insert_data($data, 'temp');
