@@ -32,7 +32,7 @@
             </tr>
    </form>
    <!-- ============================================================================================================== -->
-   <form action="<?= base_url() . 'auto/belanjabarangtemp' ?>">
+   <form action="<?= base_url() . 'auto/autobelanja' ?>">
       <?php foreach ($temp as $t) { ?>
          <tr>
             <td><input type="hidden" name="id_transaksi[]" value="<?= $t->id_transaksi ?>"><?= $no++; ?></td>
@@ -50,7 +50,9 @@
          <td></td>
          <td></td>
          <td>Total Semua</td>
-         <td><?= '4387u1048013'; ?></td>
+         <td><input type="hidden" value="<?php foreach ($total as $tot) {
+                                             echo $tot->total_harga;
+                                          } ?>" name="total_harga"><?= $tot->total_harga; ?></td>
          <td><button type="submit" class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/stokbarang/' ?>"><span class="glyphicon glyphicon-plus"></span>Bayar</button></td>
       </tr>
       </tbody>

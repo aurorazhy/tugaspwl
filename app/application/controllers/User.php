@@ -225,6 +225,7 @@ class User extends CI_Controller
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
       $data['temp'] = $this->M_barang->get_data('temp')->result();
       $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
+      $data['total'] = $this->db->query('SELECT SUM(total) AS total_harga FROM temp')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -241,6 +242,7 @@ class User extends CI_Controller
       $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategorii = id_kategori AND id_kategorii ='$id'")->result();
       $data['temp'] = $this->M_barang->get_data('temp')->result();
       $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
+      $data['total'] = $this->db->query('SELECT SUM(total) AS total_harga FROM temp')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);

@@ -28,14 +28,14 @@ class Auto extends CI_Controller
       $id_tran = $this->input->post('id_transaksi');
       $nm = $this->input->post('nama_barang');
       $qty = $this->input->post('berapa');
-      $ttl = $this->input->post('total');
+      $ttl = $this->input->post('total_harga');
       $id_barang = $this->db->query('SELECT id_barang FROM barang WHERE nama_barang LIKE ' % $nm % '');
 
       //yg id transaksi baru ya
       for ($i = 0; $i < count($nm); $i++) {
          $idtran = $id_tran[$i] + 1;
 
-         $sql = "INSERT INTO `detail_transaksi`(`id_transaksii`,`id_barangg`,`qty_belanja`,`total`) VALUES ('$idtran','$id_barang[$i]','$qty[$i]','$ttl')";
+         $sql = "INSERT INTO `detail_transaksi`(`id_transaksii`,`id_barangg`,`qty_belanja`,`total`) VALUES ('$id_tran','$id_barang[$i]','$qty[$i]','$ttl')";
          $this->db->query($sql);
       }
 
