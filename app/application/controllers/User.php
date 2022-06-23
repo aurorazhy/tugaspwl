@@ -220,10 +220,10 @@ class User extends CI_Controller
    //belanja
    public function belanja()
    {
-      $data['title'] = 'Stok Barang';
+      $data['title'] = 'Belanja';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
-      $data['temp'] = $this->M_barang->get_data('temp')->result();
+      $data['temp'] = $this->db->query('SELECT * FROM temp,transaksi')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
@@ -238,7 +238,8 @@ class User extends CI_Controller
       $data['title'] = 'Stok Barang';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['barang'] = $this->db->query("SELECT * FROM barang, kategori WHERE id_kategorii = id_kategori AND id_kategorii ='$id'")->result();
-      $data['temp'] = $this->M_barang->get_data('temp')->result();
+      $data['temp'] = $this->db->query('SELECT * FROM temp,transaksi')->result();
+      
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);

@@ -8,7 +8,9 @@
                <td> Harga </td>
                <td> Jumlah </td>
                <td> Total </td>
-               <td></td>
+               <?php foreach ($temp as $t) { ?>
+                  <td> ID - 0<?= $t->id_transaksi ?> </td>
+               <?php } ?>
             </tr>
          </thead>
          <tbody>
@@ -31,7 +33,7 @@
    <form action="<?= base_url() . 'auto/belanjabarangtemp' ?>">
       <?php foreach ($temp as $t) { ?>
          <tr>
-            <td><?= $no++; ?></td>
+            <td><input type="hidden" name="id_transaksi" value="<?= $t->id_transaksi ?>"><?= $no++; ?></td>
             <td><?= $t->nama_barang ?></td>
             <td><?= $t->harga_jual ?></td>
             <td><?= $t->berapa ?></td>
