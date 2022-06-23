@@ -35,7 +35,7 @@ class Auto extends CI_Controller
       for ($i = 0; $i < count($nm); $i++) {
          $idtran = $id_tran[$i] + 1;
 
-         $sql = "INSERT INTO `detail_transaksi`(`id_transaksii`,`id_barangg`,`qty_belanja`,`total`) VALUES ('$id_tran','$id_barang[$i]','$qty[$i]','$ttl')";
+         $sql = "INSERT INTO `detail_transaksi`(`id_transaksii`,`id_barangg`,`qty_belanja`,`total`) VALUES ('$idtran','$id_barang[$i]','$qty[$i]','$ttl[$i]')";
          $this->db->query($sql);
       }
 
