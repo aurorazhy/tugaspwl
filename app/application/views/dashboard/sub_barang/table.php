@@ -23,13 +23,13 @@
                      <?= $no++; ?>
                      <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
                   </td>
-                  <td width="200px"><input type="text" name="nm[]" value="<?= $b->nama_barang ?>" class="form-control"></td>
-                  <td><input type="number" name="hb[]" value="<?= $b->harga_beli ?>" class="form-control"></td>
-                  <td><input type="number" name="qty[]" value="<?= $b->qty ?>" class="form-control"></td>
-                  <td><input type="number" name="hl[]" value="<?= $b->harga_jual ?>" class="form-control"></td>
+                  <td width="200px"><input type="hidden" name="nm[]" value="<?= $b->nama_barang ?>"><?= $b->nama_barang ?></td>
+                  <td><input type="hidden" name="hb[]" value="<?= $b->harga_beli ?>"><?= $b->harga_beli ?></td>
+                  <td><input type="hidden" name="qty[]" value="<?= $b->qty ?>"><?= $b->qty ?></td>
+                  <td><input type="hidden" name="hl[]" value="<?= $b->harga_jual ?>"><?= $b->harga_jual ?></td>
                   <td>
-                     <input type="hidden" name="id_kat[]" value="<?= $b->id_kategori ?>" class="form-control">
-                     <input type="text" name="kat[]" value="<?= $b->nama_kategori ?>" class="form-control">
+                     <input type="hidden" name="id_kat[]" value="<?= $b->id_kategori ?>">
+                     <input type="hidden" name="kat[]" value="<?= $b->nama_kategori ?>"><?= $b->nama_kategori ?>
                   </td>
                   <td width="160px">
                      <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
