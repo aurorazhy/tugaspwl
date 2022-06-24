@@ -224,7 +224,7 @@ class User extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
       $data['kategori'] = $this->M_barang->get_data('kategori')->result();
       $data['temp'] = $this->M_barang->get_data('temp')->result();
-      $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
+      $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi)+1 AS id_transaksi FROM transaksi')->result();
       $data['total'] = $this->db->query('SELECT SUM(total) AS total_harga FROM temp')->result();
 
       $this->load->view('templates/header', $data);
@@ -259,11 +259,13 @@ class User extends CI_Controller
       $brp = $this->input->post('brp');
       $id_transaksi = $this->input->post('id_transaksi');
       $this->form_validation->set_rules('brp', 'Berapa', 'required');
-
+      $id_barang = $this->M_barang->cari($nm)->result();
+      $idbar = $id_barang[0]->id_barang;
 
       if ($this->form_validation->run() != false) {
          $total = $hj * $brp;
          $data = array(
+            'id_barang' => $idbar,
             'nama_barang' => $nm,
             'harga_jual' => $hj,
             'berapa' => $brp,

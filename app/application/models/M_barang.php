@@ -52,4 +52,13 @@ class M_barang extends CI_Model
       $query = $this->db->get();
       return $query;
    }
+
+   function cari($nm)
+   {
+      $this->db->select('id_barang');
+      $this->db->from('barang');
+      $this->db->like('nama_barang', $nm);
+      $query = $this->db->get();
+      return $query;
+   }
 }

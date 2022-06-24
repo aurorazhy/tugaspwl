@@ -32,11 +32,11 @@
             </tr>
    </form>
    <!-- ============================================================================================================== -->
-   <form action="<?= base_url() . 'auto/autobelanja' ?>">
+   <form action="<?= base_url() . 'auto/autobelanja' ?>" method="POST">
       <?php foreach ($temp as $t) { ?>
          <tr>
             <td><input type="hidden" name="id_transaksi[]" value="<?= $t->id_transaksi ?>"><?= $no++; ?></td>
-            <td><input type="hidden" name="nama_barang[]" value="<?= $t->nama_barang ?>"><?= $t->nama_barang ?></td>
+            <td><input type="hidden" name="id_barang[]" value="<?= $t->id_barang ?>"><?= $t->nama_barang ?></td>
             <td><input type="hidden" name="harga_jual[]" value="<?= $t->harga_jual ?>"><?= $t->harga_jual ?></td>
             <td><input type="hidden" name="berapa[]" value="<?= $t->berapa ?>"><?= $t->berapa ?></td>
             <td><input type="hidden" name="total[]" value="<?= $t->total ?>"><?= $t->total ?></td>
