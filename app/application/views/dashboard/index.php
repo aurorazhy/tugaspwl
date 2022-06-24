@@ -46,7 +46,7 @@
                               </div>
 
                               <div class="card-body bg-appgrey rounded-bottom">
-                                 <a href="<?= base_url() . 'dashboard/transaksi'; ?>" style="text-decoration: none;">
+                                 <a href="<?= base_url('user/transaksi'); ?>" style="text-decoration: none;">
                                     <div class="d-flex justify-content-between">
                                        <span class="text-appregis"> Lihat Detail </span>
                                        <span class="text-dark"><i class="fas fa-arrow-right"></i></span>
