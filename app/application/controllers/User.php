@@ -279,4 +279,24 @@ class User extends CI_Controller
          redirect(base_url() . 'user/kategori');
       }
    }
+
+   //transaksi
+   public function transaksi($id = '')
+   {
+      $data['title'] = 'Transaksi';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['tanggal'] = $this->M_barang->get_data('transaksi')->result();
+      $data['jumlah'] = $this->M_barang->get_data('detail_transaksi')->result();
+      $data['transaksi'] = $this->M_barang->jointransaksiwhere($id)->result();
+      $data['total'] = $this->db->query("SELECT SUM(total) AS total_harga FROM detail_transaksi WHERE '$id'")->result();
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('dashboard/sub_transaksi/table', $data);
+      $this->load->view('dashboard/sub_transaksi/table_detail', $data);
+      $this->load->view('templates/footer');
+   }
+
+
 }

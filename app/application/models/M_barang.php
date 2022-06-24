@@ -53,6 +53,31 @@ class M_barang extends CI_Model
       return $query;
    }
 
+   function jointotal()
+   {
+      $this->db->select('*');
+
+      $this->db->from('transaksi');
+      $this->db->join('detail_transaksi', 'detail_transaksi.id_transaksii = transaksi.id_transaksi');
+
+      $query = $this->db->get();
+      return $query;
+   }
+
+   function jointransaksiwhere($id = '')
+   {
+      $this->db->select('*');
+
+      $this->db->from('detail_transaksi');
+      $this->db->join('barang', 'barang.id_barang = detail_transaksi.id_barangg');
+
+      $this->db->join('transaksi', 'transaksi.id_transaksi = detail_transaksi.id_transaksii');
+      $this->db->where('id_transaksii', $id);
+
+      $query = $this->db->get();
+      return $query;
+   }
+
    function cari($nm)
    {
       $this->db->select('id_barang');
@@ -61,4 +86,5 @@ class M_barang extends CI_Model
       $query = $this->db->get();
       return $query;
    }
+   
 }
