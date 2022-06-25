@@ -35,10 +35,12 @@ class Auto extends CI_Controller
       for ($i = 0; $i < count($id_tran); $i++) {
          $sql = ("INSERT INTO detail_transaksi (`id_transaksii`,`id_barangg`,`qty_belanja`,`total`) VALUES ('$id_tran[$i]','$id_barang[$i]','$qty[$i]','$ttl[$i]')");
          $this->db->query($sql);
+
+         $u_barang = ("UPDATE `barang` SET `qty` = qty - $qty[$i] WHERE id_barang = '$id_barang[$i]'");
+         $this->db->query($u_barang);
       }
 
       $this->db->query("INSERT INTO `transaksi`(`id_transaksi`,`tanggal`) VALUES ('$id_tran', DATE(NOW()))");
-
       $sql2 = "DELETE FROM temp";
       $this->db->query($sql2);
 
