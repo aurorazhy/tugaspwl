@@ -281,6 +281,7 @@ class User extends CI_Controller
       $idbar = $id_barang[0]->id_barang;
 
       if ($this->form_validation->run() != false) {
+         if ($nm != 0) {
          $total = $hj * $brp;
          $data = array(
             'id_barang' => $idbar,
@@ -293,6 +294,9 @@ class User extends CI_Controller
 
          $this->M_barang->insert_data($data, 'temp');
          redirect(base_url() . 'user/belanja');
+         } else {
+            redirect(base_url() . 'user/belanja');
+         }
       } else {
          redirect(base_url() . 'user/belanja');
       }
