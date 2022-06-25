@@ -39,7 +39,6 @@ class User extends CI_Controller
       $this->load->view('templates/footer');
    }
 
-   // yg asli yg bawah, ini nyoba 
    public function barangtable()
    {
       $data['title'] = 'List Barang';
@@ -139,8 +138,18 @@ class User extends CI_Controller
       $where = array(
          'id_barang' => $id
       );
-      $this->M_barang->delete_data($where,  'barang');
+      $this->M_barang->delete_data($where,  'temp');
       redirect(base_url() . 'user/stokbarang');
+   }
+
+   public function delbarang($id)
+   {
+      $where = array(
+         'id_barang' => $id
+      );
+
+      $this->M_barang->delete_data($where,  'barang');
+      redirect(base_url() . 'user/barangtable');
    }
 
    //kategori
@@ -216,6 +225,15 @@ class User extends CI_Controller
 
    //end kategori
 
+   public function deletetemp($id)
+   {
+      $where = array(
+         'id_barang' => $id
+      );
+
+      $this->M_barang->delete_data($where,  'temp');
+      redirect(base_url() . 'user/belanja');
+   }
 
    //belanja
    public function belanja()
@@ -276,7 +294,7 @@ class User extends CI_Controller
          $this->M_barang->insert_data($data, 'temp');
          redirect(base_url() . 'user/belanja');
       } else {
-         redirect(base_url() . 'user/kategori');
+         redirect(base_url() . 'user/belanja');
       }
    }
 

@@ -19,6 +19,7 @@
             <td> Qty </td>
             <td> harga Jual </td>
             <td> Nama Kategori </td>
+            <td></td>
          </tr>
       </thead>
       <tbody>
@@ -36,6 +37,7 @@
                <td><?= $b->qty ?></td>
                <td><?= $b->harga_jual ?></td>
                <td> <?= $b->nama_kategori ?></td>
+               <td><a href="<?= base_url() . 'user/delbarang/' . $b->id_barang ?>" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a></td>
             </tr>
          <?php } ?>
       </tbody>
