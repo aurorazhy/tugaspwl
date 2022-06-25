@@ -18,8 +18,13 @@
             <tr class="bg-appside">
                <td><input type="hidden" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
                <td><?= $t->tanggal ?></td>
-               <td></td>
-               <td></td>
+               <td><?php foreach ($banyak as $tra) {
+                        $tra->banyak;
+                     } ?></td>
+               <td><?php foreach ($total as $to) {
+                        echo $to->total_harga;
+                     } ?></td>
+
                <td>
                   <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
                </td>

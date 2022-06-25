@@ -281,7 +281,6 @@ class User extends CI_Controller
       $idbar = $id_barang[0]->id_barang;
 
       if ($this->form_validation->run() != false) {
-         if ($nm != 0) {
          $total = $hj * $brp;
          $data = array(
             'id_barang' => $idbar,
@@ -294,9 +293,6 @@ class User extends CI_Controller
 
          $this->M_barang->insert_data($data, 'temp');
          redirect(base_url() . 'user/belanja');
-         } else {
-            redirect(base_url() . 'user/belanja');
-         }
       } else {
          redirect(base_url() . 'user/belanja');
       }
@@ -310,7 +306,8 @@ class User extends CI_Controller
       $data['tanggal'] = $this->M_barang->get_data('transaksi')->result();
       $data['jumlah'] = $this->M_barang->get_data('detail_transaksi')->result();
       $data['transaksi'] = $this->M_barang->jointransaksiwhere($id)->result();
-      $data['total'] = $this->db->query("SELECT SUM(total) AS total_harga FROM detail_transaksi WHERE '$id'")->result();
+      $data['banyak'] = $this->db->query("SELECT COUNT(id_barangg) AS banyak FROM detail_transaksi WHERE id_transaksii = '$id'")->result();
+      $data['total'] = $this->db->query("SELECT SUM(total) AS total_harga FROM detail_transaksi WHERE id_transaksii = '$id'")->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
