@@ -315,4 +315,14 @@ class User extends CI_Controller
       $this->load->view('dashboard/sub_transaksi/table_detail', $data);
       $this->load->view('templates/footer');
    }
+
+   public function deltransaksi($id)
+   {
+      $where = array(
+         'id_transaksi' => $id
+      );
+
+      $this->M_barang->delete_data($where,  'transaksi');
+      redirect(base_url() . 'user/transaksi');
+   }
 }
