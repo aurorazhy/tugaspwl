@@ -34,9 +34,7 @@
                <td><?php foreach ($banyak as $tra) {
                         $tra->banyak;
                      } ?></td>
-               <td><?php foreach ($total as $to) {
-                        echo $to->total_harga;
-                     } ?></td>
+               <td><?= $t->total_belanja ?></td>
 
                <td>
                   <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
