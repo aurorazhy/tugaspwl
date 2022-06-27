@@ -11,12 +11,13 @@
 <body>
    <h3>Laporan Transaksi Warung</h3>
    <table>
-      <?php foreach ($print as $t) { ?>
-         <tr>
-            <td>Pada Tanggal</td>
-            <td> : </td>
-            <td><?= $t->tanggal ?></td>
-         </tr>
+      <tr>
+         <td>Pada Tanggal</td>
+         <td> : </td>
+         <td><?php foreach ($tanggal as $t) {
+                  echo $t->tanggal;
+               } ?></td>
+      </tr>
    </table>
    <br>
 
@@ -24,7 +25,6 @@
       <thead>
          <tr>
             <td> No </td>
-            <td> Tanggal Transaksi </td>
             <td> Nama Barang </td>
             <td> Harga </td>
             <td> Qty </td>
@@ -35,17 +35,17 @@
       <tbody>
          <?php
          $no = 1;
+         foreach ($print as $p) {
          ?>
-         <tr class="bg-appside">
-            <td><?= $no++ ?></td>
-            <td><?= $t->tanggal ?></td>
-            <td><?= $t->nama_barang ?></td>
-            <td><?= $t->harga_jual ?></td>
-            <td><?= $t->qty_belanja ?></td>
-            <td><?= $t->total ?></td>
-            <td><?= $t->total_belanja ?></td>
-         </tr>
-      <?php } ?>
+            <tr class="bg-appside">
+               <td><?= $no++ ?></td>
+               <td><?= $p->nama_barang ?></td>
+               <td><?= $p->harga_jual ?></td>
+               <td><?= $p->qty_belanja ?></td>
+               <td><?= $p->total ?></td>
+               <td><?= $p->total_belanja ?></td>
+            </tr>
+         <?php } ?>
 
       </tbody>
    </table>

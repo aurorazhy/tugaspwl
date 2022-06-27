@@ -368,14 +368,13 @@ class User extends CI_Controller
       }
    }
 
-   public function print_perone()
+   public function print_perone($id)
    {
 
-      $id = $this->input->get('id');
-
       if ($id != '') {
-         $data['print'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = '$id' 
-         AND id_barangg=id_barang AND ORDER BY id_transaksi ASC")->result();
+         $data['tanggal'] = $this->db->query("SELECT * FROM transaksi WHERE id_transaksi = '$id'")->result();
+         $data['print'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksi = id_transaksii 
+         AND id_barangg=id_barang AND id_transaksi= '$id'")->result();
          $this->load->view('dashboard/sub_transaksi/print_perone', $data);
       } else {
       }
