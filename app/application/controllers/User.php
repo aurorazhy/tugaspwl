@@ -338,27 +338,46 @@ class User extends CI_Controller
 
       $awal = $this->input->post('tgl_awal');
       $akhir = $this->input->post('tgl_akhir');
-      $this->form_validation->set_rules('tgl_awal', 'Tanggal Awal', 'required');
-      $this->form_validation->set_rules('tgl_akhir', 'Tanggal Akhir', 'required');
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
 
-      if ($this->form_validation->run() != false) {
          $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
                            AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
          $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
-         $this->load->view('dashboard/sub_transaksi/detail_filter');
-      } elseif ($id != '') {
-         $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
-                           AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
-         $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
-         $this->load->view('dashboard/sub_transaksi/detail_filter', $dataa);
-      } else {
-         echo "error blok";
-      }
+      $this->load->view('dashboard/sub_transaksi/detail_filter', $dataa);
+
 
       $this->load->view('templates/footer');
+   }
+
+   //print
+
+   public function printtgl()
+   {
+
+      $awal = $this->input->get('tgl_awal');
+      $akhir = $this->input->get('tgl_akhir');
+
+      if ($awal != '' && $akhir != '') {
+         $data['print'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
+         AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir' ORDER BY id_transaksi ASC")->result();
+         $this->load->view('dashboard/sub_transaksi/print', $data);
+      } else {
+      }
+   }
+
+   public function print_perone()
+   {
+
+      $id = $this->input->get('id');
+
+      if ($id != '') {
+         $data['print'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = '$id' 
+         AND id_barangg=id_barang AND ORDER BY id_transaksi ASC")->result();
+         $this->load->view('dashboard/sub_transaksi/print_perone', $data);
+      } else {
+      }
    }
 }
