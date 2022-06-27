@@ -13,7 +13,7 @@
 <div class="col-7 ml-5 bg-white rounded">
    <div class="btn-group">
       <a href="<?= base_url() . 'user/print/?tgl_awal=' . set_value('tgl_awal') . '&tgl_akhir=' . set_value('tgl_akhir') ?>" class="btn btn-appside btn-sm">
-         <span class="glyphicon glyphicon-print"></span> </a>
+         <i class="fas fa-print"></i> </a>
    </div>
    <table class="table table-hover text-center">
       <thead>
