@@ -344,7 +344,7 @@ class User extends CI_Controller
       $this->load->view('templates/topbar', $data);
 
       if ($this->form_validation->run() != false) {
-         $dataa['tgl'] = $this->M_barang->jointransaksiwhere("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
+         $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
                            AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
          $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
       } else {
