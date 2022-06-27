@@ -333,6 +333,8 @@ class User extends CI_Controller
    {
       $data['title'] = 'Transaksi';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $dataa['total'] = $this->db->query("SELECT SUM(total) AS total_harga FROM detail_transaksi WHERE id_transaksii = '$id'")->result();
+      $dataa['tran'] = $this->M_barang->jointransaksiwhere($id)->result();
 
       $awal = $this->input->post('tgl_awal');
       $akhir = $this->input->post('tgl_akhir');
@@ -347,8 +349,14 @@ class User extends CI_Controller
          $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
                            AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
          $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
+         $this->load->view('dashboard/sub_transaksi/detail_filter');
+      } elseif ($id != '') {
+         $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
+                           AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
+         $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
+         $this->load->view('dashboard/sub_transaksi/detail_filter', $dataa);
       } else {
-         $this->load->view('dashboard/sub_transaksi/table', $data);
+         echo "error blok";
       }
 
       $this->load->view('templates/footer');

@@ -38,7 +38,7 @@
                <td></td>
 
                <td>
-                  <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
+                  <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/caritgl/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
                </td>
                <td><a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a></td>
 
