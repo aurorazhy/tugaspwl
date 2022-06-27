@@ -40,9 +40,12 @@
             </tr>
          </tbody>
       </table>
-      <div class="btn-group">
-         <a href="<?= base_url() . 'user/print_perone/' . $t->id_transaksi ?>" class="btn btn-appside btn-sm">
-            <i class="fas fa-print"></i> </a>
-      </div>
+      <?php foreach ($transaksi as $t) {
+      ?>
+         <div class="btn-group">
+            <a href="<?= base_url() . 'user/print_perone/' . $t->id_transaksi ?>" class="btn btn-appside btn-sm">
+               <i class="fas fa-print"></i> </a>
+         </div>
+      <?php } ?>
    </div>
 </form>
