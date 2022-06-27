@@ -63,7 +63,7 @@
                                  <div class="card-body m-auto">
                                     <h5 class="card-title"><?= $user['name']; ?></h5>
                                     <p class="card-text mb-1"><?= $user['email']; ?></p>
-                                    <p class="card-text">jadi member</p>
+                                    <p class="card-text">Hari ini Tanggal <?php echo date("d-M-Y") ?></p>
                                  </div>
                               </div>
                            </div>
