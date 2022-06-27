@@ -1,4 +1,8 @@
 <div class="col-7 ml-5 bg-white rounded">
+   <div class="btn-group">
+      <a href="<?= base_url() . 'user/print_perone' ?>" class="btn btn-appside btn-sm">
+         <i class="fas fa-print"></i> </a>
+   </div>
    <table class="table table-hover text-center">
       <thead>
          <tr>
