@@ -32,7 +32,7 @@
          foreach ($tgl as $t) {
          ?>
             <tr class="bg-appside">
-               <td><input type="text" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
+               <td><input type="hidden" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
                <td><?= $t->tanggal ?></td>
                <td></td>
                <td></td>
