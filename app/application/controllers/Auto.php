@@ -29,6 +29,7 @@ class Auto extends CI_Controller
       $id_barang = $this->input->post('id_barang');
       $qty = $this->input->post('berapa');
       $ttl = $this->input->post('total');
+      $ttl_semua = $this->input->post('total_harga');
 
       //yg id transaksi baru ya
 
@@ -40,7 +41,7 @@ class Auto extends CI_Controller
          $this->db->query($u_barang);
       }
 
-      $this->db->query("INSERT INTO `transaksi`(`id_transaksi`,`tanggal`) VALUES ('$id_tran', DATE(NOW()))");
+      $this->db->query("INSERT INTO `transaksi`(`id_transaksi`,`tanggal`, `total_belanja`) VALUES ('$id_tran', DATE(NOW()),'$ttl_semua')");
       $sql2 = "DELETE FROM temp";
       $this->db->query($sql2);
 
