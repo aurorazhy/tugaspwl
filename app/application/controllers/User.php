@@ -326,4 +326,31 @@ class User extends CI_Controller
       $this->M_barang->delete_data($where,  'transaksi');
       redirect(base_url() . 'user/transaksi');
    }
+
+   //cari tgl untuk laporan
+
+   public function caritgl($id = '')
+   {
+      $data['title'] = 'Transaksi';
+      $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+      $awal = $this->input->post('tgl_awal');
+      $akhir = $this->input->post('tgl_akhir');
+      $this->form_validation->set_rules('tgl_awal', 'Tanggal Awal', 'required');
+      $this->form_validation->set_rules('tgl_akhir', 'Tanggal Akhir', 'required');
+
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+
+      if ($this->form_validation->run() != false) {
+         $dataa['tgl'] = $this->M_barang->jointransaksiwhere("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
+                           AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
+         $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
+      } else {
+         $this->load->view('dashboard/sub_transaksi/table', $data);
+      }
+
+      $this->load->view('templates/footer');
+   }
 }

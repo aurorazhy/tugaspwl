@@ -3,15 +3,18 @@
       <div class="input-group-prepend">
          <span class="input-group-text">Cari Tanggal</span>
       </div>
-      <input type="date" class="form-control" name="tgl_awal">
-      <?= form_error('tgl_awal') ?>
-      <input type="date" class="form-control" name="tgl_akhir">
-      <?= form_error('tgl_akhir') ?>
+      <input type="date" class="form-control" name="tgl_awal" value="<?= set_value('tgl_awal') ?>">
+      <input type="date" class="form-control" name="tgl_akhir" value="<?= set_value('tgl_akhir') ?>">
       <input type="submit" value="Cari" name="cari" class="btn btn-primary">
    </div>
 </form>
 
+
 <div class="col-7 ml-5 bg-white rounded">
+   <div class="btn-group">
+      <a href="<?= base_url() . 'user/print/?tgl_awal=' . set_value('tgl_awal') . '&tgl_akhir=' . set_value('tgl_akhir') ?>" class="btn btn-appside btn-sm">
+         <span class="glyphicon glyphicon-print"></span> </a>
+   </div>
    <table class="table table-hover text-center">
       <thead>
          <tr>
@@ -26,17 +29,13 @@
       <tbody>
          <?php
          $no = 1;
-         foreach ($tanggal as $t) {
+         foreach ($tgl as $t) {
          ?>
             <tr class="bg-appside">
-               <td><input type="hidden" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
+               <td><input type="text" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
                <td><?= $t->tanggal ?></td>
-               <td><?php foreach ($banyak as $tra) {
-                        $tra->banyak;
-                     } ?></td>
-               <td><?php foreach ($total as $to) {
-                        echo $to->total_harga;
-                     } ?></td>
+               <td></td>
+               <td></td>
 
                <td>
                   <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
