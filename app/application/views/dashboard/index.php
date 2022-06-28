@@ -26,7 +26,9 @@
                         <div class="row">
                            <div class="col-6">
                               <div class="card-body text-white bg-appregis">
-                                 <div class="huge text-right">0</div>
+                                 <div class="huge text-right"><?php foreach ($brg as $br) {
+                                                                  echo $br->barangnya;
+                                                               } ?></div>
                                  <p class="card-title text-right text-appgrey">Jumlah Barang</p>
                               </div>
                               <div class="card-body bg-appgrey rounded-bottom">
@@ -41,7 +43,9 @@
 
                            <div class="col-6">
                               <div class="card-body text-white bg-appregis">
-                                 <div class="huge text-right">0</div>
+                                 <div class="huge text-right"><?php foreach ($trans as $tra) {
+                                                                  echo $tra->transaksinya;
+                                                               } ?></div>
                                  <p class="card-title text-right text-appgrey"> Jumlah Transaksi </p>
                               </div>
 
