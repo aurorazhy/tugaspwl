@@ -10,7 +10,7 @@
                   <?= form_error('kat') ?>
                </div>
                <div class="form-group">
-                  <input type="submit" value="Simpan" class="btn btn-primary">
+                  <input type="submit" value="Simpan" class="btn bg-appregis text-appgrey">
                </div>
             <?php } ?>
             </form>

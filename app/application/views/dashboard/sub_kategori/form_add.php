@@ -9,7 +9,7 @@
                <?= form_error('kat'); ?>
             </div>
             <div class="form-group">
-               <input type="submit" value="Tambah" class="btn btn-primary">
+               <input type="submit" value="Tambah" class="btn bg-appregis text-appgrey">
             </div>
          </form>
       </div>
