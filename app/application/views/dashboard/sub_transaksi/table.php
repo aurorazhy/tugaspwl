@@ -31,7 +31,6 @@
                                     <td class="py-3 text-appgrey"> Tanggal Transaksi </td>
                                     <td class="py-3 text-appgrey"> Jumlah </td>
                                     <td></td>
-                                    <td></td>
                                  </tr>
                               </thead>
                               <tbody>
@@ -45,9 +44,9 @@
                                        <td><?= $t->total_belanja ?></td>
 
                                        <td>
-                                          <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
+                                          <a class="btn bg-appside btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span><i class="fas fa-info-circle"></i></a>
+                                          <a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn bg-danger btn-sm"><i class="fas fa-backspace"></i></a>
                                        </td>
-                                       <td><a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn bg-danger btn-sm"><i class="fas fa-backspace"></i></a></td>
 
                                     </tr>
                                  <?php } ?>

@@ -20,8 +20,8 @@
                </td>
                <td width="200px"><input type="hidden" name="nm[]" value="<?= $k->nama_kategori ?>"><?= $k->nama_kategori ?></td>
                <td width="160px">
-                  <a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/kategori/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
-                  <a class="btn bg-warning btn-sm" href="<?= base_url() . 'user/kategori_del_act/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                  <a class="btn bg-appside btn-sm" href="<?= base_url() . 'user/kategori/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-plus"></span><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/kategori_del_act/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-trash"></span><i class="fas fa-backspace"></i></a>
                </td>
             </tr>
          <?php } ?>

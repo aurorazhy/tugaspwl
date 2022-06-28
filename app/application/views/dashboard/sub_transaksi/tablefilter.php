@@ -42,7 +42,7 @@
                            <td><?= $t->total_belanja ?></td>
 
                            <td>
-                              <a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn btn-outline-danger btn-sm float-left"><i class="fas fa-trash"></i></a>
+                              <a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn bg-danger btn-sm float-left"><i class="fas fa-backspace"></i></a>
                            </td>
 
                         </tr>
