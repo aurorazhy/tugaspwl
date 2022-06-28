@@ -1,6 +1,6 @@
-<div class="col-7 ml-5 bg-white rounded">
+<div class="col-7 ml-5 p-0 bg-appcard rounded">
    <form action="<?= base_url() . 'user/belanjabarangtemp' ?>" method="post">
-      <table class="table table-hover text-center">
+      <table class="table table-hover text-center pb-0">
          <thead>
             <tr>
                <td> No </td>
@@ -14,7 +14,7 @@
             <?php
             $no = 1;
             ?>
-            <tr class="bg-appside">
+            <tr class="bg-appregis">
                <td>
                   <input type="hidden" value="
                      <?php foreach ($transaksi as $tr) { ?>
