@@ -42,7 +42,6 @@
                            <td></td>
 
                            <td>
-                              <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/caritgl/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
                               <a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn btn-outline-danger btn-sm float-left"><i class="fas fa-trash"></i></a>
                            </td>
 
