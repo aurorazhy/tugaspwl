@@ -7,6 +7,8 @@ class User extends CI_Controller
    {
       $data['title'] = 'Dashboard';
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      $data['brg'] = $this->db->query('SELECT COUNT(id_barang) AS barangnya FROM barang')->result();
+      $data['trans'] = $this->db->query('SELECT COUNT(id_transaksi) AS transaksinya FROM transaksi')->result();
 
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
