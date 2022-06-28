@@ -5,9 +5,9 @@
 
                <div class="container">
                   <div class="row">
-                     <div class="col-12">
+                     <div class="col-6 mx-1 px-2">
                         <form action="<?= base_url() . 'user/caritgl' ?>" method="POST">
-                           <div class="input-group col-5 my-3">
+                           <div class="input-group m-3 bg-appregis">
                               <div class="input-group-prepend">
                                  <span class="input-group-text">Cari Tanggal</span>
                               </div>
@@ -15,7 +15,7 @@
                               <?= form_error('tgl_awal') ?>
                               <input type="date" class="form-control" name="tgl_akhir">
                               <?= form_error('tgl_akhir') ?>
-                              <input type="submit" value="Cari" name="cari" class="btn btn-primary">
+                              <input type="submit" value="Cari" name="cari" class="btn bg-appregis text-appgrey">
                            </div>
                         </form>
                      </div>
@@ -27,9 +27,9 @@
                            <table class="table table-hover text-center">
                               <thead>
                                  <tr>
-                                    <td class="py-3"> No </td>
-                                    <td class="py-3"> Tanggal Transaksi </td>
-                                    <td class="py-3"> Jumlah </td>
+                                    <td class="py-3 text-appgrey"> No </td>
+                                    <td class="py-3 text-appgrey"> Tanggal Transaksi </td>
+                                    <td class="py-3 text-appgrey"> Jumlah </td>
                                     <td> </td>
                                     <td></td>
                                  </tr>
