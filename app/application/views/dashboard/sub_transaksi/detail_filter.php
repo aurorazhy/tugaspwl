@@ -8,7 +8,6 @@
                <td class="py-3"> Harga </td>
                <td class="py-3"> Qty </td>
                <td class="py-3"> Total </td>
-               <td> </td>
          </thead>
          <?php
          $no = 1;
@@ -21,21 +20,9 @@
                   <td><?= $t->harga_jual ?></td>
                   <td><?= $t->qty_belanja ?></td>
                   <td><?= $t->total ?></td>
-                  <td></td>
                </tr>
-
-               <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>Total Semua</td>
-                  <td><?php foreach ($total as $to) {
-                           echo $to->total_harga;
-                        } ?></td>
-                  <td></td>
-               </tr>
+            <?php } ?>
             </tbody>
-         <?php } ?>
       </table>
    </div>
 </div>

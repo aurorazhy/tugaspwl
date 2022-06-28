@@ -346,8 +346,7 @@ class User extends CI_Controller
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
 
-      $dataa['tgl'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksii = id_transaksi 
-                           AND id_barangg=id_barang AND DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
+      $dataa['tgl'] = $this->db->query("SELECT * FROM transaksi WHERE DATE(tanggal) >= '$awal' AND DATE(tanggal) <= '$akhir'")->result();
       $this->load->view('dashboard/sub_transaksi/tablefilter', $dataa);
       $this->load->view('dashboard/sub_transaksi/detail_filter', $dataa);
 

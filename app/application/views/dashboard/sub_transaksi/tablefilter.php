@@ -39,7 +39,7 @@
                         <tr class="bg-appcard">
                            <td><input type="hidden" value="<?= $t->id_transaksi ?>"><?= $no++ ?></td>
                            <td><?= $t->tanggal ?></td>
-                           <td></td>
+                           <td><?= $t->total_belanja ?></td>
 
                            <td>
                               <a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn btn-outline-danger btn-sm float-left"><i class="fas fa-trash"></i></a>
