@@ -10,7 +10,7 @@
    </a>
 
    <!-- Divider -->
-   <hr class="sidebar-divider bg-white my-0">
+   <hr class="bg-white my-0">
 
    <!-- Nav Item - Dashboard -->
    <li class="nav-item bg-appregis">
@@ -20,7 +20,7 @@
    </li>
 
    <!-- Divider -->
-   <hr class="sidebar-divider bg-white">
+   <hr class="bg-white my-0 mb-2">
 
    <!-- Heading -->
    <div class="sidebar-heading">
@@ -38,7 +38,7 @@
    </li>
 
    <!-- Divider -->
-   <hr class="sidebar-divider bg-white">
+   <hr class="bg-white my-0 mb-2">
 
    <!-- Heading -->
    <div class="sidebar-heading">
@@ -58,7 +58,7 @@
    </li>
 
    <!-- Divider -->
-   <hr class="sidebar-divider bg-white">
+   <hr class="bg-white my-0">
 
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
@@ -67,7 +67,7 @@
    </li>
 
    <!-- Divider -->
-   <hr class="sidebar-divider d-none d-md-block bg-white">
+   <hr class="d-none d-md-block bg-white my-0 mb-2">
 
    <!-- Sidebar Toggler (Sidebar) -->
    <div class="text-center d-none d-md-inline">
