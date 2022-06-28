@@ -27,7 +27,7 @@
                   <?= form_error('brp'); ?></td>
                <td></td>
                <td>
-                  <button type="submit" class="btn bg-info btn-sm"><span class="glyphicon glyphicon-plus"></span>+</button>
+                  <button type="submit" class="btn bg-appcard btn-sm m-1"><span class="glyphicon glyphicon-plus"></span>+</button>
                </td>
             </tr>
    </form>
