@@ -15,7 +15,7 @@
    <!-- Nav Item - Dashboard -->
    <li class="nav-item bg-appregis">
       <a class="nav-link" href="<?= base_url('user') ?>">
-         <i class="fas fa-fw fa-tachometer-alt"></i>
+         <i class="fas fa-columns"></i>
          <span>Dashboard</span></a>
    </li>
 
@@ -28,12 +28,12 @@
    </div>
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('user/barangtable') ?>">
-         <i class="fas fa-fw fa-chart-area"></i>
+         <i class="fas fa-info-circle"></i>
          <span>Detail</span></a>
    </li>
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('user/stokbarang') ?>">
-         <i class="fas fa-fw fa-chart-area"></i>
+         <i class="fas fa-plus-circle"></i>
          <span>Tambah Barang</span></a>
    </li>
 
@@ -48,12 +48,12 @@
    <!-- Nav Item - Charts -->
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('user/belanja') ?>">
-         <i class="fas fa-fw fa-chart-area"></i>
+         <i class="fas fa-shopping-basket"></i>
          <span>Belanja</span></a>
    </li>
    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('user/transaksi') ?>">
-         <i class="fas fa-fw fa-chart-area"></i>
+         <i class="fas fa-money-bill-wave"></i>
          <span>Transaksi</span></a>
    </li>
 

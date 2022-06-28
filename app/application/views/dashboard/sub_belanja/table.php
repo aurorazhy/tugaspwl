@@ -40,7 +40,7 @@
             <td><input type="hidden" name="harga_jual[]" value="<?= $t->harga_jual ?>"><?= $t->harga_jual ?></td>
             <td><input type="hidden" name="berapa[]" value="<?= $t->berapa ?>"><?= $t->berapa ?></td>
             <td><input type="hidden" name="total[]" value="<?= $t->total ?>"><?= $t->total ?></td>
-            <td><a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/deletetemp/' . $t->id_barang ?>"><i class="fas fa-trash"></i></a></td>
+            <td><a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/deletetemp/' . $t->id_barang ?>"><i class="fas fa-backspace"></i></a></td>
          </tr>
       <?php } ?>
       <tr>

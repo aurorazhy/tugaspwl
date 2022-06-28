@@ -37,7 +37,7 @@
 
             <!--sampe -->
             <div class="form-group">
-               <input type="submit" value="Input" class="btn btn-appregis text-light float-right">
+               <button type="submit" value="" class="btn btn-appregis text-light float-right"><i class="fas fa-cart-plus"></i></button>
             </div>
          </form>
       </div>

@@ -32,14 +32,14 @@
                      <input type="hidden" name="kat[]" value="<?= $b->nama_kategori ?>"><?= $b->nama_kategori ?>
                   </td>
                   <td width="160px">
-                     <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
-                     <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>
+                     <a class="btn bg-appside btn-sm" href="<?= base_url() . 'user/stokbarang/' . $b->id_barang ?>"><span class="glyphicon glyphicon-plus"></span><i class="fas fa-pencil-alt"></i></a>
+                     <a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/barang_del_act/' . $b->id_barang ?>"><span class="glyphicon glyphicon-trash"></span><i class="fas fa-backspace"></i></a>
                   </td>
                </tr>
             <?php } ?>
          </tbody>
       </table>
-      <input type="submit" value="Simpan" name="simpan" class="btn btn-appregis text-light float-right">
+      <button type="submit" name="simpan" class="btn btn-appregis text-light float-right"><i class="fas fa-save"></i></button>
    </form>
    <a href="<?= base_url() . 'user/kategori/' ?>" class="btn btn-appregis text-light">Tambah Kategori</a>
 </div>
