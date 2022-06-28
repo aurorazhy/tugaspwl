@@ -27,7 +27,7 @@
                   <?= form_error('brp'); ?></td>
                <td></td>
                <td>
-                  <button type="submit" class="btn btn-outline-info btn-sm"><span class="glyphicon glyphicon-plus"></span>Tambah List</button>
+                  <button type="submit" class="btn bg-info btn-sm"><span class="glyphicon glyphicon-plus"></span>Tambah List</button>
                </td>
             </tr>
    </form>
@@ -40,7 +40,7 @@
             <td><input type="hidden" name="harga_jual[]" value="<?= $t->harga_jual ?>"><?= $t->harga_jual ?></td>
             <td><input type="hidden" name="berapa[]" value="<?= $t->berapa ?>"><?= $t->berapa ?></td>
             <td><input type="hidden" name="total[]" value="<?= $t->total ?>"><?= $t->total ?></td>
-            <td><a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/deletetemp/' . $t->id_barang ?>"><i class="fas fa-trash"></i></a></td>
+            <td><a class="btn bg-danger btn-sm" href="<?= base_url() . 'user/deletetemp/' . $t->id_barang ?>"><i class="fas fa-trash"></i></a></td>
          </tr>
       <?php } ?>
       <tr>
@@ -51,7 +51,7 @@
          <td><input type="hidden" value="<?php foreach ($total as $tot) {
                                              echo $tot->total_harga;
                                           } ?>" name="total_harga"><?= $tot->total_harga; ?></td>
-         <td><button type="submit" class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/stokbarang/' ?>"><span class="glyphicon glyphicon-plus"></span>Bayar</button></td>
+         <td><button type="submit" class="btn bg-appregis btn-sm text-appgrey" href="<?= base_url() . 'user/stokbarang/' ?>"><span class="glyphicon glyphicon-plus"></span>Bayar</button></td>
       </tr>
       </tbody>
       </table>

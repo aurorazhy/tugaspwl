@@ -1,4 +1,4 @@
-<div class="col-7 ml-5 bg-appcard rounded">
+<div class="col-5 ml-5 bg-appcard rounded">
 
    <table class="table table-hover text-center">
       <thead>
@@ -18,7 +18,7 @@
                   <?= $no++; ?>
                   <input type="hidden" name="id[]" value="<?= $k->id_kategorii  ?>">
                </td>
-               <td width="200px"><input type="text" name="nm[]" value="<?= $k->nama_kategori ?>" class="form-control"></td>
+               <td width="200px"><input type="hidden" name="nm[]" value="<?= $k->nama_kategori ?>"><?= $k->nama_kategori ?></td>
                <td width="160px">
                   <a class="btn btn-outline-danger btn-sm" href="<?= base_url() . 'user/kategori/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-plus"></span>Edit</a>
                   <a class="btn btn-outline-warning btn-sm" href="<?= base_url() . 'user/kategori_del_act/' . $k->id_kategorii ?>"><span class="glyphicon glyphicon-trash"></span>Hapus</a>

@@ -24,7 +24,7 @@
                   <div class="row">
                      <div class="col-3 ml-5 bg-appcard rounded">
                         <?php foreach ($kategori as $k) { ?>
-                           <a class="btn btn-primary btn-lg" href="<?= base_url() . 'user/kategorilist/' . $k->id_kategorii ?>"><input type="hidden" name="id" value="<?= $k->id_kategorii ?>"><?= $k->nama_kategori ?></a>
+                           <a class="btn bg-info btn-lg m-1" href="<?= base_url() . 'user/kategorilist/' . $k->id_kategorii ?>"><input type="hidden" name="id" value="<?= $k->id_kategorii ?>"><?= $k->nama_kategori ?></a>
                         <?php } ?>
                         <!--akhir container-->
                      </div>

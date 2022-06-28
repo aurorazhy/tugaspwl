@@ -30,7 +30,7 @@
                                     <td class="py-3 text-appgrey"> No </td>
                                     <td class="py-3 text-appgrey"> Tanggal Transaksi </td>
                                     <td class="py-3 text-appgrey"> Jumlah </td>
-                                    <td> </td>
+                                    <td></td>
                                     <td></td>
                                  </tr>
                               </thead>
@@ -47,7 +47,7 @@
                                        <td>
                                           <a class="btn btn-outline-info btn-sm" href="<?= base_url() . 'user/transaksi/' . $t->id_transaksi ?>"><span class="glyphicon glyphicon-plus"></span>Detail</a>
                                        </td>
-                                       <td><a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a></td>
+                                       <td><a href="<?= base_url() . 'user/deltransaksi/' . $t->id_transaksi ?>" class="btn bg-danger btn-sm"><i class="fas fa-trash"></i></a></td>
 
                                     </tr>
                                  <?php } ?>
