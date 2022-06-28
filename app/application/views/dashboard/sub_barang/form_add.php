@@ -1,5 +1,5 @@
 <div class="contrainer-fluid mt-5">
-   <div class="row ml-3">
+   <div class="row ml-5">
       <div class="col-2 py-3">
 
          <form action="<?= base_url() . 'user/barang_add_act' ?>" method="post">
@@ -37,7 +37,7 @@
 
             <!--sampe -->
             <div class="form-group">
-               <button type="submit" value="" class="btn btn-appregis text-light float-right"><i class="fas fa-cart-plus"></i></button>
+               <button type="submit" value="" class="btn btn-appregis text-light float-right"><i class="fas fa-save"></i></button>
             </div>
          </form>
       </div>

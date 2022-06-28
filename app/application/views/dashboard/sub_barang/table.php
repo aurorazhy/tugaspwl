@@ -39,7 +39,7 @@
             <?php } ?>
          </tbody>
       </table>
-      <button type="submit" name="simpan" class="btn btn-appregis text-light float-right"><i class="fas fa-save"></i></button>
+      <button type="submit" name="simpan" class="btn btn-appregis text-light float-right"><i class="fas fa-cart-plus"></i></button>
    </form>
    <a href="<?= base_url() . 'user/kategori/' ?>" class="btn btn-appregis text-light">Tambah Kategori</a>
 </div>
