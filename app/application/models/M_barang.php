@@ -86,4 +86,23 @@ class M_barang extends CI_Model
       $query = $this->db->get();
       return $query;
    }
+
+
+   public function getkey($keyword)
+   {
+      $this->db->select('*');
+      $this->db->join('kategori', 'kategori.id_kategorii = barang.id_kategori');
+      $this->db->from('barang');
+      $this->db->like('nama_barang', $keyword);
+      return $this->db->get()->result();
+   }
+
+   //new but doesnt works
+   function search_blog($title)
+   {
+      $this->db->like('nama_barang', $title, 'both');
+      $this->db->order_by('nama_barang', 'ASC');
+      $this->db->limit(10);
+      return $this->db->get('barang')->result();
+   }
 }
