@@ -10,21 +10,16 @@
             <div class="col-6 text-right">
                <a href="<?= base_url() . 'user/stokbarang'; ?>" class="btn btn-appcard">+</a>
             </div>
-            <div class="col-11 ml-3 p-0">
-               <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                     <div class="input-group-text">
-                        <i class="fas fa-search"></i>
-                     </div>
-                  </div>
-                  <input type="text" class="form-control col-2">
-               </div>
+
+            <!-- new -->
+            <?= form_open('user/search') ?>
+            <div class="input-group col-12 ml-1 mt-2 p-0">
+               <button class="btn btn-appcard" type="submit"><i class="fas fa-search"></i></button>
+               <input type="text" name="keyword" class="form-control">
             </div>
+            <?= form_close() ?>
             <div>
-               <?= form_open('user/search') ?>
-               <input type="text" name="keyword" class="form-control col-2">
-               <button type="submit" class="btn btn-appcard"><i class="fas fa-search"></i></button>
-               <?= form_close() ?>
+
             </div>
          </div>
       </div>
