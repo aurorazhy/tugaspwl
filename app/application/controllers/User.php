@@ -294,15 +294,6 @@ class User extends CI_Controller
       $data['transaksi'] = $this->db->query('SELECT MAX(id_transaksi)+1 AS id_transaksi FROM transaksi')->result();
       $data['total'] = $this->db->query('SELECT SUM(total) AS total_harga FROM temp')->result();
 
-      if (isset($_GET['term'])) {
-         $result = $this->blog_model->search_blog($_GET['term']);
-         if (count($result) > 0) {
-            foreach ($result as $row)
-               $arr_result[] = $row->blog_title;
-            echo json_encode($arr_result);
-         }
-      }
-
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);

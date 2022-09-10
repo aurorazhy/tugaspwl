@@ -13,47 +13,9 @@
             <tbody>
                <tr>
                   <td colspan="6">
-                     Search User : <input type="text" id="autouser">
-
-                     <br><br>
-                     Selected user id : <input type="text" id="userid" value='0'>
-
-                     <script>
-                        $(document).ready(function() {
-
-                           $("#autouser").autocomplete({
-                              source: function(request, response) {
-                                 // Fetch data
-                                 $.ajax({
-                                    url: "<?= base_url() ?>index.php/User/userList",
-                                    type: 'post',
-                                    dataType: "json",
-                                    data: {
-                                       search: request.term
-                                    },
-                                    success: function(data) {
-                                       response(data);
-                                    }
-                                 });
-                              },
-                              select: function(event, ui) {
-                                 // Set selection
-                                 $('#autouser').val(ui.item.label); // display the selected text
-                                 $('#userid').val(ui.item.value); // save selected id to input
-                                 return false;
-                              },
-                              focus: function(event, ui) {
-                                 $("#autouser").val(ui.item.label);
-                                 $("#userid").val(ui.item.value);
-                                 return false;
-                              },
-                           });
-
-                        });
-                     </script>
-                     <!-- <div class="input-group col-11 ml-4 p-0">
-                        <input type="text" name="keyword" class="form-control" placeholder="Cari...">
-                     </div> -->
+                     <div class="input-group col-11 ml-4 p-0">
+                        <input type="text" id="autouser" class="form-control" placeholder="Cari...">
+                     </div>
                   </td>
                </tr>
                <?php
@@ -66,7 +28,7 @@
                         <?= $tr->id_transaksi ?>
                      <?php } ?>" name="id_transaksi">
                   </td>
-                  <td><input type="text" name="nm" class="form-control"></td>
+                  <td><input type="text" name="nm" class="form-control" id="autouser"></td>
                   <td><input type="number" name="hj" class="form-control"></td>
                   <td><input type="number" name="brp" class="form-control">
                      <?= form_error('brp'); ?></td>
@@ -105,15 +67,41 @@
       <a href="<?= base_url() . 'user/test' ?>">test</a>
    </div>
    </div>
-   </div>
 
-   <script type="text/javascript">
+   <script>
       $(document).ready(function() {
-         $("#title").autocomplete({
-            source: "<?php echo site_url('user/barangtable/?'); ?>"
+
+         $("#autouser").autocomplete({
+            source: function(request, response) {
+               // Fetch data
+               $.ajax({
+                  url: "<?= base_url() ?>index.php/User/userList",
+                  type: 'post',
+                  dataType: "json",
+                  data: {
+                     search: request.term
+                  },
+                  success: function(data) {
+                     response(data);
+                  }
+               });
+            },
+            select: function(event, ui) {
+               // Set selection
+               $('#autouser').val(ui.item.label); // display the selected text
+               $('#userid').val(ui.item.value); // save selected id to input
+               return false;
+            },
+            focus: function(event, ui) {
+               $("#autouser").val(ui.item.label);
+               $("#userid").val(ui.item.value);
+               return false;
+            },
          });
+
       });
    </script>
+   </div>
 
    </div>
    <!-- /.container-fluid -->
