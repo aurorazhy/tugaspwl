@@ -64,7 +64,6 @@
          </table>
 
       </form>
-      <a href="<?= base_url() . 'user/test' ?>">test</a>
    </div>
    </div>
 
