@@ -9,6 +9,14 @@
    <meta name="description" content="">
    <meta name="author" content="">
 
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+   <!-- Script -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- jQuery UI -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+
    <title><?= $title; ?></title>
    <script src="https://kit.fontawesome.com/5681f6e595.js" crossorigin="anonymous"></script>
    <!-- Custom fonts for this template-->
@@ -21,7 +29,10 @@
 
    <!-- auto -->
    <script src="<?= base_url() . 'assets/js/jquery-3.6.1.min.js' ?>" type="text/javascript"></script>
+   <script src="<?= base_url() . 'assets/js/jquery-ui/jquery-ui.js' ?>" type="text/javascript"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
 
 </head>
 

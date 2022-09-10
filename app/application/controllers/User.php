@@ -428,7 +428,6 @@ class User extends CI_Controller
 
    public function print_perone($id)
    {
-
       if ($id != '') {
          $data['tanggal'] = $this->db->query("SELECT * FROM transaksi WHERE id_transaksi = '$id'")->result();
          $data['print'] = $this->db->query("SELECT * FROM detail_transaksi, transaksi, barang WHERE id_transaksi = id_transaksii 
@@ -436,5 +435,23 @@ class User extends CI_Controller
          $this->load->view('dashboard/sub_transaksi/print_perone', $data);
       } else {
       }
+   }
+
+   //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+   public function userList()
+   {
+      // POST data
+      $postData = $this->input->post();
+
+      // get data
+      $data = $this->M_barang->getUsers($postData);
+
+      echo json_encode($data);
+   }
+
+   public function test()
+   {
+      $this->load->view('templates/header');
+      $this->load->view('dashboard/sub_belanja/testt');
    }
 }

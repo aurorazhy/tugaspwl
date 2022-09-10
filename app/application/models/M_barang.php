@@ -29,7 +29,6 @@ class M_barang extends CI_Model
       $this->db->delete($table);
    }
 
-
    //baru
    function joinbarang()
    {
@@ -98,11 +97,23 @@ class M_barang extends CI_Model
    }
 
    //new but doesnt works
-   function search_blog($title)
+   function getUsers($postData)
    {
-      $this->db->like('nama_barang', $title, 'both');
-      $this->db->order_by('nama_barang', 'ASC');
-      $this->db->limit(10);
-      return $this->db->get('barang')->result();
+      $response = array();
+      $this->db->select('*');
+
+      if ($postData['search']) {
+         // Select record
+         $this->db->where("nama_barang like '%" . $postData['search'] . "%' ");
+         $records = $this->db->get('barang')->result();
+
+         foreach ($records as $row) {
+            $response[] = array(
+               "value" => $row->id_barang,
+               "label" => $row->nama_barang
+            );
+         }
+      }
+      return $response;
    }
 }
