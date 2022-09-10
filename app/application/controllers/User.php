@@ -433,16 +433,8 @@ class User extends CI_Controller
    {
       // POST data
       $postData = $this->input->post();
-
       // get data
       $data = $this->M_barang->getUsers($postData);
-
       echo json_encode($data);
-   }
-
-   public function test()
-   {
-      $this->load->view('templates/header');
-      $this->load->view('dashboard/sub_belanja/testt');
    }
 }
