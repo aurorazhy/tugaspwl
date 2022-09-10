@@ -126,11 +126,11 @@
 
             console.log(data);
 
-            $('#update_id').val(data[1]);
-            $('#nm').val(data[2]);
-            $('#hb').val(data[3]);
-            $('#qty').val(data[4]);
-            $('#hj').val(data[5]);
+            $('#update_id').val(data[2]);
+            $('#nm').val(data[3]);
+            $('#hb').val(data[4]);
+            $('#qty').val(data[5]);
+            $('#hj').val(data[6]);
          });
       });
    </script>

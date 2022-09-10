@@ -175,7 +175,7 @@ class User extends CI_Controller
             'harga_jual' => $harga_jual
          );
 
-         $this->M_barang->cariedit($where, $data, 'barang');
+         $this->M_barang->update_data($where, $data, 'barang');
          redirect(base_url() . 'user/barangtable');
       } else {
          redirect(base_url() . 'user/barangtable');
