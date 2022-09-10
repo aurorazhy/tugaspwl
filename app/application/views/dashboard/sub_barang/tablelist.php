@@ -77,7 +77,7 @@
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header bg-appside">
-               <h5 class="modal-title" id="exampleModalLabel">Edit Barang </h5>
+               <h5 class="modal-title text-white" id="exampleModalLabel">Edit Barang </h5>
                <a href="<?= base_url() . 'user/barangtable' ?>" class="btn-close" aria-label="Close"></a>
             </div>
 
