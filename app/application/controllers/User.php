@@ -437,4 +437,10 @@ class User extends CI_Controller
       $data = $this->M_barang->getUsers($postData);
       echo json_encode($data);
    }
+
+   public function lastid()
+   {
+      $data['print'] = $this->db->query('SELECT MAX(id_transaksi) AS id_transaksi FROM transaksi')->result();
+      $this->load->view('dashboard/sub_transaksi/print_perone', $data);
+   }
 }

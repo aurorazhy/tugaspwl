@@ -11,13 +11,6 @@
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td colspan="6">
-                     <div class="input-group col-11 ml-4 p-0">
-                        <input type="text" id="autouser" class="form-control" placeholder="Cari...">
-                     </div>
-                  </td>
-               </tr>
                <?php
                $no = 1;
                ?>
@@ -29,7 +22,7 @@
                      <?php } ?>" name="id_transaksi">
                   </td>
                   <td><input type="text" name="nm" class="form-control" id="autouser"></td>
-                  <td><input type="number" name="hj" class="form-control"></td>
+                  <td><input type="number" name="hj" class="form-control" id="userid"></td>
                   <td><input type="number" name="brp" class="form-control">
                      <?= form_error('brp'); ?></td>
                   <td></td>

@@ -109,7 +109,7 @@ class M_barang extends CI_Model
 
          foreach ($records as $row) {
             $response[] = array(
-               "value" => $row->id_barang,
+               "value" => $row->harga_jual,
                "label" => $row->nama_barang
             );
          }
