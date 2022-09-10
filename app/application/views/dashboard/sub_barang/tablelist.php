@@ -77,9 +77,7 @@
          <div class="modal-content">
             <div class="modal-header bg-appside">
                <h5 class="modal-title" id="exampleModalLabel">Edit Barang </h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-               </button>
+               <a href="<?= base_url() . 'user/barangtable' ?>" class="btn-close" aria-label="Close"></a>
             </div>
 
             <form action="<?= base_url() . 'user/barang_edit_modal' ?>" method="POST">
@@ -106,7 +104,7 @@
                   </div>
 
                   <div class="modal-footer">
-                     <button type="button" class="btn bg-danger" data-dismiss="modal">Batal</button>
+                     <a href="<?= base_url() . 'user/barangtable' ?>" class="btn bg-danger" data-dismiss="modal">Batal</a>
                      <button type="submit" name="insertdata" class="btn bg-appside">Ubah</button>
                   </div>
             </form>
