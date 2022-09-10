@@ -32,7 +32,7 @@
                <td> Nama Barang </td>
                <td> Harga Beli </td>
                <td> Qty </td>
-               <td> harga Jual </td>
+               <td> Harga Jual </td>
                <td> Nama Kategori </td>
                <td></td>
             </tr>
@@ -47,6 +47,7 @@
                      <?= $no++; ?>
                      <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
                   </td>
+                  <td></td>
                   <td style="display:none;"><?= $b->id_barang  ?></td>
                   <td width="200px"><?= $b->nama_barang ?></td>
                   <td><?= $b->harga_beli ?></td>
