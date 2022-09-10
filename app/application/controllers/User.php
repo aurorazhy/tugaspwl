@@ -90,7 +90,6 @@ class User extends CI_Controller
       $this->load->view('dashboard/sub_barang/table', $data);
       $this->load->view('templates/footer');
    }
-   //sampe sini nyobanya
 
    public function barang_add_act()
    {
@@ -149,6 +148,37 @@ class User extends CI_Controller
          redirect(base_url() . 'user/stokbarang');
       } else {
          redirect(base_url() . 'user/stokbarang');
+      }
+   }
+
+   //new for modal edit
+   public function barang_edit_modal()
+   {
+      $id = $this->input->post('update_id');
+      $this->form_validation->set_rules('nm', 'Nama Barang', 'required');
+      $this->form_validation->set_rules('qty', 'Quantity', 'required');
+
+      if ($this->form_validation->run() != false) {
+         $nama_barang = $this->input->post('nm');
+         $harga_beli = $this->input->post('hb');
+         $qty = $this->input->post('qty');
+         $harga_jual = $this->input->post('hj');
+
+         $where = array(
+            'id_barang' => $id
+         );
+
+         $data = array(
+            'nama_barang' => $nama_barang,
+            'harga_beli' => $harga_beli,
+            'qty' => $qty,
+            'harga_jual' => $harga_jual
+         );
+
+         $this->M_barang->cariedit($where, $data, 'barang');
+         redirect(base_url() . 'user/barangtable');
+      } else {
+         redirect(base_url() . 'user/barangtable');
       }
    }
 

@@ -105,4 +105,16 @@ class M_barang extends CI_Model
       $this->db->limit(10);
       return $this->db->get('barang')->result();
    }
+
+   //modal
+   function cariedit($where, $data, $table)
+   {
+      // $this->db->select('*');
+      // $this->db->from('barang');
+      // $this->db->like('where', $where);
+      $this->db->where($where);
+      $this->db->update($table, $data);
+      // $query = $this->db->get();
+      // return $query;
+   }
 }

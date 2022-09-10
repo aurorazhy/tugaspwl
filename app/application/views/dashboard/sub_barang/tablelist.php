@@ -28,6 +28,7 @@
          <thead>
             <tr>
                <td> No </td>
+               <td></td>
                <td> Nama Barang </td>
                <td> Harga Beli </td>
                <td> Qty </td>
@@ -46,12 +47,15 @@
                      <?= $no++; ?>
                      <input type="hidden" name="id[]" value="<?= $b->id_barang  ?>">
                   </td>
+                  <td style="display:none;"><?= $b->id_barang  ?></td>
                   <td width="200px"><?= $b->nama_barang ?></td>
                   <td><?= $b->harga_beli ?></td>
                   <td><?= $b->qty ?></td>
                   <td><?= $b->harga_jual ?></td>
                   <td> <?= $b->nama_kategori ?></td>
-                  <td><a href="<?= base_url() . 'user/delbarang/' . $b->id_barang ?>" class="btn bg-danger btn-sm"><i class="fas fa-backspace"></i></a></td>
+                  <td><button type="button" class="btn bg-appside btn-sm mr-2 editbtn"><i class="fas fa-pencil-alt"></i></button>
+                     <a href="<?= base_url() . 'user/delbarang/' . $b->id_barang ?>" class="btn bg-danger btn-sm"><i class="fas fa-backspace"></i></a>
+                  </td>
                </tr>
             <?php } ?>
          </tbody>
@@ -65,8 +69,73 @@
          })
       </script>
       </form>
-   </div>
 
+   </div>
+   <!-- Modal -->
+   <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header bg-appside">
+               <h5 class="modal-title" id="exampleModalLabel">Edit Barang </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+
+            <form action="<?= base_url() . 'user/barang_edit_modal' ?>" method="POST">
+
+               <div class="modal-body">
+                  <input type="hidden" name="update_id" id="update_id">
+                  <div class="form-group">
+                     <label>Nama Barang</label>
+                     <input type="text" name="nm" id="nm" class="form-control">
+                     <?= form_error('nm'); ?>
+                  </div>
+                  <div class="form-group">
+                     <label>Harga Beli</label>
+                     <input type="text" name="hb" id="hb" class="form-control">
+                  </div>
+                  <div class="form-group">
+                     <label>Qty</label>
+                     <input type="text" name="qty" id="qty" class="form-control">
+                     <?= form_error('qty'); ?>
+                  </div>
+                  <div class="form-group">
+                     <label>Harga Jual</label>
+                     <input type="number" name="hj" id="hj" class="form-control">
+                  </div>
+
+                  <div class="modal-footer">
+                     <button type="button" class="btn bg-danger" data-dismiss="modal">Batal</button>
+                     <button type="submit" name="insertdata" class="btn bg-appside">Ubah</button>
+                  </div>
+            </form>
+
+         </div>
+      </div>
+   </div>
+   <script>
+      $(document).ready(function() {
+         $('.editbtn').on('click', function() {
+            $('#editmodal').modal('show');
+
+            $tr = $(this).closest('tbody tr');
+
+            var data = $tr.children("td").map(function() {
+               return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#update_id').val(data[1]);
+            $('#nm').val(data[2]);
+            $('#hb').val(data[3]);
+            $('#qty').val(data[4]);
+            $('#hj').val(data[5]);
+         });
+      });
+   </script>
+</div>
 </div>
 
 
